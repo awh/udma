@@ -1,0 +1,1335 @@
+<html>
+<head>
+<title>Diablo II Character Skills</title>
+</head>
+<body>
+<h1 align=center>Diablo II Character Skills</h1>
+
+<p>Well, I did say I would list the character skills in a separate
+table, and I guess I've put it off long enough.&nbsp; So here it is!</p>
+
+<p>There are two numbers shown for each character skill.&nbsp; One is
+the offset into the <a
+href="DiabloIIv1.09_File_Format.shtml#skills">character skills</a>
+section of the <a href="DiabloIIv1.09_File_Format.shtml">saved
+character file</a>.&nbsp; The other is the skill ID used in some of
+the <a href="DiabloIIv1.09_Magic_Properties.shtml">magical
+properties</a> (i.e., "+2 to Bash (Barbarian Only)", "level 3 Fire
+Bolt (33/33 Charges)", etc.), and in the <a
+href="DiabloIIv1.09_File_Format.shtml#120">button actions</a>.&nbsp;
+The common skill ID's are only used in button actions.</p>
+
+<table border cellspacing=0 align=center>
+<tr><th colspan=5><font size="+1">Common Skills</font></th></tr>
+<tr><td width="30%" valign=top><table border cellspacing=0 width="100%">
+<tr><th width="20%">ID</th>
+<th width="80%">Skill</th></tr>
+<tr><td align=center>0</td>
+<td align=center>Attack</td></tr>
+<tr><td align=center>1</td>
+<td align=center>Kick</td></tr>
+<tr><td align=center>2</td>
+<td align=center>Throw</td></tr>
+</table></td>
+<td width="5%">&nbsp;</td>
+<td width="30%" valign=top><table border cellspacing=0 width="100%">
+<tr><th width="20%">ID</th>
+<th width="80%">Skill</th></tr>
+<tr><td align=center>3</td>
+<td align=center>Unsummon</td></tr>
+<tr><td align=center>4</td>
+<td align=center>Left Hand Throw</td></tr>
+<tr><td align=center>5</td>
+<td align=center>Left Hand Swing</td></tr>
+</table></td>
+<td width="5%">&nbsp;</td>
+<td width="30%" valign=top><table border cellspacing=0 width="100%">
+<tr><th width="15%">ID</th>
+<th width="85%">Skill</th></tr>
+<tr><td align=center>217</td>
+<td align=center>Scroll of Identify</td></tr>
+<tr><td align=center>218</td>
+<td align=center>Tome of Identify</td></tr>
+<tr><td align=center>219</td>
+<td align=center>Scroll of Town Portal</td></tr>
+<tr><td align=center>220</td>
+<td align=center>Tome of Town Portal</td></tr>
+</table></td></tr>
+</table>
+
+<br>
+
+<table border cellspacing=0 align=center>
+<tr><th colspan=5><font size="+1">Amazon Skills</font></th></tr>
+<tr><td valign=top><table border cellspacing=0 width="100%">
+<tr><th colspan=5>Bow and Crossbow Skills</th></tr>
+<tr><th width="10%"><font size="-1">Off.</font></th>
+<th width="10%"><font size="-1">ID</font></th>
+<th width="35%"><font size="-1">Skill</font></th>
+<th width="10%"><font size="-1">Lvl</font></th>
+<th width="35%"><font size="-1">Prerequisites</font></th></tr>
+<tr><td align=center><font size="-1">0</font></td>
+<td align=center><font size="-1">6</font></td>
+<td align=center><font size="-1">Magic Arrow</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">1</font></td>
+<td align=center><font size="-1">7</font></td>
+<td align=center><font size="-1">Fire Arrow</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">5</font></td>
+<td align=center><font size="-1">11</font></td>
+<td align=center><font size="-1">Cold Arrow</font></td>
+<td align=center><font size="-1">6</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">6</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Multiple Shot</font></td>
+<td align=center><font size="-1">6</font></td>
+<td align=center><font size="-1">Magic Arrow</font></td></tr>
+<tr><td align=center><font size="-1">10</font></td>
+<td align=center><font size="-1">16</font></td>
+<td align=center><font size="-1">Exploding Arrow</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Fire Arrow,<br>Multiple Shot</font></td></tr>
+<tr><td align=center><font size="-1">15</font></td>
+<td align=center><font size="-1">21</font></td>
+<td align=center><font size="-1">Ice Arrow</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Cold Arrow</font></td></tr>
+<tr><td align=center><font size="-1">16</font></td>
+<td align=center><font size="-1">22</font></td>
+<td align=center><font size="-1">Guided Arrow</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Cold Arrow,<br>Multiple Shot</font></td></tr>
+<tr><td align=center><font size="-1">20</font></td>
+<td align=center><font size="-1">26</font></td>
+<td align=center><font size="-1">Strafe</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Guided Arrow</font></td></tr>
+<tr><td align=center><font size="-1">21</font></td>
+<td align=center><font size="-1">27</font></td>
+<td align=center><font size="-1">Immolation Arrow</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Exploding Arrow</font></td></tr>
+<tr><td align=center><font size="-1">25</font></td>
+<td align=center><font size="-1">31</font></td>
+<td align=center><font size="-1">Freezing Arrow</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Ice Arrow</font></td></tr>
+</table></td>
+<td width="5%"></td>
+<td valign=top><table border cellspacing=0 width="100%">
+<tr><th colspan=5>Passive and Magic Skills</th></tr>
+<tr><th width="10%"><font size="-1">Off.</font></th>
+<th width="10%"><font size="-1">ID</font></th>
+<th width="35%"><font size="-1">Skill</font></th>
+<th width="10%"><font size="-1">Lvl</font></th>
+<th width="35%"><font size="-1">Prerequisites</font></th></tr>
+<tr><td align=center><font size="-1">2</font></td>
+<td align=center><font size="-1">8</font></td>
+<td align=center><font size="-1">Inner Sight</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">3</font></td>
+<td align=center><font size="-1">9</font></td>
+<td align=center><font size="-1">Critical Strike</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">7</font></td>
+<td align=center><font size="-1">13</font></td>
+<td align=center><font size="-1">Dodge</font></td>
+<td align=center><font size="-1">6</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">11</font></td>
+<td align=center><font size="-1">17</font></td>
+<td align=center><font size="-1">Slow Missiles</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Inner Sight</font></td></tr>
+<tr><td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Avoid</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Dodge</font></td></tr>
+<tr><td align=center><font size="-1">17</font></td>
+<td align=center><font size="-1">23</font></td>
+<td align=center><font size="-1">Penetrate</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Critical Strike</font></td></tr>
+<tr><td align=center><font size="-1">22</font></td>
+<td align=center><font size="-1">28</font></td>
+<td align=center><font size="-1">Dopplezon</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Slow Missiles</font></td></tr>
+<tr><td align=center><font size="-1">23</font></td>
+<td align=center><font size="-1">29</font></td>
+<td align=center><font size="-1">Evade</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Avoid</font></td></tr>
+<tr><td align=center><font size="-1">26</font></td>
+<td align=center><font size="-1">32</font></td>
+<td align=center><font size="-1">Valkyrie</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Dopplezon,<br>Evade</font></td></tr>
+<tr><td align=center><font size="-1">27</font></td>
+<td align=center><font size="-1">33</font></td>
+<td align=center><font size="-1">Pierce</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Penetrate</font></td></tr>
+</table></td>
+<td width="5%"></td>
+<td valign=top><table border cellspacing=0 width="100%">
+<tr><th colspan=5>Javelin and Spear Skills</th></tr>
+<tr><th width="10%"><font size="-1">Off.</font></th>
+<th width="10%"><font size="-1">ID</font></th>
+<th width="35%"><font size="-1">Skill</font></th>
+<th width="10%"><font size="-1">Lvl</font></th>
+<th width="35%"><font size="-1">Prerequisites</font></th></tr>
+<tr><td align=center><font size="-1">4</font></td>
+<td align=center><font size="-1">10</font></td>
+<td align=center><font size="-1">Jab</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">8</font></td>
+<td align=center><font size="-1">14</font></td>
+<td align=center><font size="-1">Power Strike</font></td>
+<td align=center><font size="-1">6</font></td>
+<td align=center><font size="-1">Jab</font></td></tr>
+<tr><td align=center><font size="-1">9</font></td>
+<td align=center><font size="-1">15</font></td>
+<td align=center><font size="-1">Poison Javelin</font></td>
+<td align=center><font size="-1">6</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">13</font></td>
+<td align=center><font size="-1">19</font></td>
+<td align=center><font size="-1">Impale</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Jab</font></td></tr>
+<tr><td align=center><font size="-1">14</font></td>
+<td align=center><font size="-1">20</font></td>
+<td align=center><font size="-1">Lightning Bolt</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Poison Javelin</font></td></tr>
+<tr><td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Charged Strike</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Power Strike,<br>Lightning Bolt</font></td></tr>
+<tr><td align=center><font size="-1">19</font></td>
+<td align=center><font size="-1">25</font></td>
+<td align=center><font size="-1">Plague Javelin</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Lightning Bolt</font></td></tr>
+<tr><td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Fend</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Impale</font></td></tr>
+<tr><td align=center><font size="-1">28</font></td>
+<td align=center><font size="-1">34</font></td>
+<td align=center><font size="-1">Lightning Strike</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Charged Strike</font></td></tr>
+<tr><td align=center><font size="-1">29</font></td>
+<td align=center><font size="-1">35</font></td>
+<td align=center><font size="-1">Lightning Fury</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Plague Javelin</font></td></tr>
+</table></td>
+</table>
+
+<br>
+
+<table border cellspacing=0 align=center>
+<tr><th colspan=5><font size="+1">Sorceress Skills</font></th></tr>
+<tr><td valign=top><table border cellspacing=0 width="100%">
+<tr><th colspan=5>Fire Spells</th></tr>
+<tr><th width="10%"><font size="-1">Off.</font></th>
+<th width="10%"><font size="-1">ID</font></th>
+<th width="35%"><font size="-1">Skill</font></th>
+<th width="10%"><font size="-1">Lvl</font></th>
+<th width="35%"><font size="-1">Prerequisites</font></th></tr>
+<tr><td align=center><font size="-1">0</font></td>
+<td align=center><font size="-1">36</font></td>
+<td align=center><font size="-1">Fire Bolt</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">1</font></td>
+<td align=center><font size="-1">37</font></td>
+<td align=center><font size="-1">Warmth</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">5</font></td>
+<td align=center><font size="-1">41</font></td>
+<td align=center><font size="-1">Inferno</font></td>
+<td align=center><font size="-1">6</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">10</font></td>
+<td align=center><font size="-1">46</font></td>
+<td align=center><font size="-1">Blaze</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Inferno</font></td></tr>
+<tr><td align=center><font size="-1">11</font></td>
+<td align=center><font size="-1">47</font></td>
+<td align=center><font size="-1">Fire Ball</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Fire Bolt</font></td></tr>
+<tr><td align=center><font size="-1">15</font></td>
+<td align=center><font size="-1">51</font></td>
+<td align=center><font size="-1">Fire Wall</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Blaze</font></td></tr>
+<tr><td align=center><font size="-1">16</font></td>
+<td align=center><font size="-1">52</font></td>
+<td align=center><font size="-1">Enchant</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Warmth,<br>Fire Ball</font></td></tr>
+<tr><td align=center><font size="-1">20</font></td>
+<td align=center><font size="-1">56</font></td>
+<td align=center><font size="-1">Meteor</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Fire Ball,<br>Fire Wall</font></td></tr>
+<tr><td align=center><font size="-1">25</font></td>
+<td align=center><font size="-1">61</font></td>
+<td align=center><font size="-1">Fire Mastery</font></td>
+<td align=center><font size="-1">30</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">26</font></td>
+<td align=center><font size="-1">62</font></td>
+<td align=center><font size="-1">Hydra</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Enchant</font></td></tr>
+</table></td>
+<td width="5%"></td>
+<td valign=top><table border cellspacing=0 width="100%">
+<tr><th colspan=5>Lightning Spells</th></tr>
+<tr><th width="10%"><font size="-1">Off.</font></th>
+<th width="10%"><font size="-1">ID</font></th>
+<th width="35%"><font size="-1">Skill</font></th>
+<th width="10%"><font size="-1">Lvl</font></th>
+<th width="35%"><font size="-1">Prerequisites</font></th></tr>
+<tr><td align=center><font size="-1">2</font></td>
+<td align=center><font size="-1">38</font></td>
+<td align=center><font size="-1">Charged Bolt</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">6</font></td>
+<td align=center><font size="-1">42</font></td>
+<td align=center><font size="-1">Static Field</font></td>
+<td align=center><font size="-1">6</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">7</font></td>
+<td align=center><font size="-1">43</font></td>
+<td align=center><font size="-1">Telekinesis</font></td>
+<td align=center><font size="-1">6</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">48</font></td>
+<td align=center><font size="-1">Nova</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Static Field</font></td></tr>
+<tr><td align=center><font size="-1">13</font></td>
+<td align=center><font size="-1">49</font></td>
+<td align=center><font size="-1">Lightning</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Charged Bolt</font></td></tr>
+<tr><td align=center><font size="-1">17</font></td>
+<td align=center><font size="-1">53</font></td>
+<td align=center><font size="-1">Chain Lightning</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Lightning</font></td></tr>
+<tr><td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">54</font></td>
+<td align=center><font size="-1">Teleport</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Telekinesis</font></td></tr>
+<tr><td align=center><font size="-1">21</font></td>
+<td align=center><font size="-1">57</font></td>
+<td align=center><font size="-1">Thunder Storm</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Nova,<br>Chain Lightning</font></td></tr>
+<tr><td align=center><font size="-1">22</font></td>
+<td align=center><font size="-1">58</font></td>
+<td align=center><font size="-1">Energy Shield</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Teleport,<br>Chain Lightning</font></td></tr>
+<tr><td align=center><font size="-1">27</font></td>
+<td align=center><font size="-1">63</font></td>
+<td align=center><font size="-1">Lightning Mastery</font></td>
+<td align=center><font size="-1">30</font></td>
+<td>&nbsp;</td></tr>
+</table></td>
+<td width="5%"></td>
+<td valign=top><table border cellspacing=0 width="100%">
+<tr><th colspan=5>Cold Spells</th></tr>
+<tr><th width="10%"><font size="-1">Off.</font></th>
+<th width="10%"><font size="-1">ID</font></th>
+<th width="35%"><font size="-1">Skill</font></th>
+<th width="10%"><font size="-1">Lvl</font></th>
+<th width="35%"><font size="-1">Prerequisites</font></th></tr>
+<tr><td align=center><font size="-1">3</font></td>
+<td align=center><font size="-1">39</font></td>
+<td align=center><font size="-1">Ice Bolt</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">4</font></td>
+<td align=center><font size="-1">40</font></td>
+<td align=center><font size="-1">Frozen Armor</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">8</font></td>
+<td align=center><font size="-1">44</font></td>
+<td align=center><font size="-1">Frost Nova</font></td>
+<td align=center><font size="-1">6</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">9</font></td>
+<td align=center><font size="-1">45</font></td>
+<td align=center><font size="-1">Ice Blast</font></td>
+<td align=center><font size="-1">6</font></td>
+<td align=center><font size="-1">Ice Bolt</font></td></tr>
+<tr><td align=center><font size="-1">14</font></td>
+<td align=center><font size="-1">50</font></td>
+<td align=center><font size="-1">Shiver Armor</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Ice Blast,<br>Frozen Armor</font></td></tr>
+<tr><td align=center><font size="-1">19</font></td>
+<td align=center><font size="-1">55</font></td>
+<td align=center><font size="-1">Glacial Spike</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Ice Blast</font></td></tr>
+<tr><td align=center><font size="-1">23</font></td>
+<td align=center><font size="-1">59</font></td>
+<td align=center><font size="-1">Blizzard</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Frost Nova,<br>Glacial Spike</font></td></tr>
+<tr><td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">60</font></td>
+<td align=center><font size="-1">Chilling Armor</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Shiver Armor</font></td></tr>
+<tr><td align=center><font size="-1">28</font></td>
+<td align=center><font size="-1">64</font></td>
+<td align=center><font size="-1">Frozen Orb</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Blizzard</font></td></tr>
+<tr><td align=center><font size="-1">29</font></td>
+<td align=center><font size="-1">65</font></td>
+<td align=center><font size="-1">Cold Mastery</font></td>
+<td align=center><font size="-1">30</font></td>
+<td>&nbsp;</td></tr>
+</table></td>
+</table>
+
+<br>
+
+<table border cellspacing=0 align=center>
+<tr><th colspan=5><font size="+1">Necromancer Skills</font></th></tr>
+<tr><td valign=top><table border cellspacing=0 width="100%">
+<tr><th colspan=5>Curses</th></tr>
+<tr><th width="10%"><font size="-1">Off.</font></th>
+<th width="10%"><font size="-1">ID</font></th>
+<th width="35%"><font size="-1">Skill</font></th>
+<th width="10%"><font size="-1">Lvl</font></th>
+<th width="35%"><font size="-1">Prerequisites</font></th></tr>
+<tr><td align=center><font size="-1">0</font></td>
+<td align=center><font size="-1">66</font></td>
+<td align=center><font size="-1">Amplify Damage</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">5</font></td>
+<td align=center><font size="-1">71</font></td>
+<td align=center><font size="-1">Dim Vision</font></td>
+<td align=center><font size="-1">6</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">6</font></td>
+<td align=center><font size="-1">72</font></td>
+<td align=center><font size="-1">Weaken</font></td>
+<td align=center><font size="-1">6</font></td>
+<td align=center><font size="-1">Amplify Damage</font></td></tr>
+<tr><td align=center><font size="-1">10</font></td>
+<td align=center><font size="-1">76</font></td>
+<td align=center><font size="-1">Iron Maiden</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Amplify Damage</font></td></tr>
+<tr><td align=center><font size="-1">11</font></td>
+<td align=center><font size="-1">77</font></td>
+<td align=center><font size="-1">Terror</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Weaken</font></td></tr>
+<tr><td align=center><font size="-1">15</font></td>
+<td align=center><font size="-1">81</font></td>
+<td align=center><font size="-1">Confuse</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Dim Vision</font></td></tr>
+<tr><td align=center><font size="-1">16</font></td>
+<td align=center><font size="-1">82</font></td>
+<td align=center><font size="-1">Life Tap</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Iron Maiden</font></td></tr>
+<tr><td align=center><font size="-1">20</font></td>
+<td align=center><font size="-1">86</font></td>
+<td align=center><font size="-1">Attract</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Confuse</font></td></tr>
+<tr><td align=center><font size="-1">21</font></td>
+<td align=center><font size="-1">87</font></td>
+<td align=center><font size="-1">Decrepify</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Terror</font></td></tr>
+<tr><td align=center><font size="-1">25</font></td>
+<td align=center><font size="-1">91</font></td>
+<td align=center><font size="-1">Lower Resist</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Life Tap,<br>Decrepify</font></td></tr>
+</table></td>
+<td width="5%"></td>
+<td valign=top><table border cellspacing=0 width="100%">
+<tr><th colspan=5>Poison and Bone Spells</th></tr>
+<tr><th width="10%"><font size="-1">Off.</font></th>
+<th width="10%"><font size="-1">ID</font></th>
+<th width="35%"><font size="-1">Skill</font></th>
+<th width="10%"><font size="-1">Lvl</font></th>
+<th width="35%"><font size="-1">Prerequisites</font></th></tr>
+<tr><td align=center><font size="-1">1</font></td>
+<td align=center><font size="-1">67</font></td>
+<td align=center><font size="-1">Teeth</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">2</font></td>
+<td align=center><font size="-1">68</font></td>
+<td align=center><font size="-1">Bone Armor</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">7</font></td>
+<td align=center><font size="-1">73</font></td>
+<td align=center><font size="-1">Poison Dagger</font></td>
+<td align=center><font size="-1">6</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">8</font></td>
+<td align=center><font size="-1">74</font></td>
+<td align=center><font size="-1">Corpse Explosion</font></td>
+<td align=center><font size="-1">6</font></td>
+<td align=center><font size="-1">Teeth</font></td></tr>
+<tr><td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">78</font></td>
+<td align=center><font size="-1">Bone Wall</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Bone Armor</font></td></tr>
+<tr><td align=center><font size="-1">17</font></td>
+<td align=center><font size="-1">83</font></td>
+<td align=center><font size="-1">Poison Explosion</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Poison Dagger,<br>Corpse Explosion</font></td></tr>
+<tr><td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">84</font></td>
+<td align=center><font size="-1">Bone Spear</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Corpse Explosion</font></td></tr>
+<tr><td align=center><font size="-1">22</font></td>
+<td align=center><font size="-1">88</font></td>
+<td align=center><font size="-1">Bone Prison</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Bone Wall,<br>Bone Spear</font></td></tr>
+<tr><td align=center><font size="-1">26</font></td>
+<td align=center><font size="-1">92</font></td>
+<td align=center><font size="-1">Poison Nova</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Poison Explosion</font></td></tr>
+<tr><td align=center><font size="-1">27</font></td>
+<td align=center><font size="-1">93</font></td>
+<td align=center><font size="-1">Bone Spirit</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Bone Spear</font></td></tr>
+</table></td>
+<td width="5%"></td>
+<td valign=top><table border cellspacing=0 width="100%">
+<tr><th colspan=5>Summoning Spells</th></tr>
+<tr><th width="10%"><font size="-1">Off.</font></th>
+<th width="10%"><font size="-1">ID</font></th>
+<th width="35%"><font size="-1">Skill</font></th>
+<th width="10%"><font size="-1">Lvl</font></th>
+<th width="35%"><font size="-1">Prerequisites</font></th></tr>
+<tr><td align=center><font size="-1">3</font></td>
+<td align=center><font size="-1">69</font></td>
+<td align=center><font size="-1">Skeleton Mastery</font></td>
+<td align=center><font size="-1">1</font></td>
+<td align=center><font size="-1">Raise Skeleton</font></td></tr>
+<tr><td align=center><font size="-1">4</font></td>
+<td align=center><font size="-1">70</font></td>
+<td align=center><font size="-1">Raise Skeleton</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">9</font></td>
+<td align=center><font size="-1">75</font></td>
+<td align=center><font size="-1">Clay Golem</font></td>
+<td align=center><font size="-1">6</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">13</font></td>
+<td align=center><font size="-1">79</font></td>
+<td align=center><font size="-1">Golem Mastery</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Clay Golem</font></td></tr>
+<tr><td align=center><font size="-1">14</font></td>
+<td align=center><font size="-1">80</font></td>
+<td align=center><font size="-1">Raise Skeletal Mage</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Raise Skeleton</font></td></tr>
+<tr><td align=center><font size="-1">19</font></td>
+<td align=center><font size="-1">85</font></td>
+<td align=center><font size="-1">Blood Golem</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Clay Golem</font></td></tr>
+<tr><td align=center><font size="-1">23</font></td>
+<td align=center><font size="-1">89</font></td>
+<td align=center><font size="-1">Summon Resist</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Golem Mastery</font></td></tr>
+<tr><td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">90</font></td>
+<td align=center><font size="-1">Iron Golem</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Blood Golem</font></td></tr>
+<tr><td align=center><font size="-1">28</font></td>
+<td align=center><font size="-1">94</font></td>
+<td align=center><font size="-1">Fire Golem</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Iron Golem</font></td></tr>
+<tr><td align=center><font size="-1">29</font></td>
+<td align=center><font size="-1">95</font></td>
+<td align=center><font size="-1">Revive</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Raise Skeletal Mage,<br>Iron Golem</font></td></tr>
+</table></td>
+</table>
+
+<br>
+
+<table border cellspacing=0 align=center>
+<tr><th colspan=5><font size="+1">Paladin Skills</font></th></tr>
+<tr><td valign=top><table border cellspacing=0 width="100%">
+<tr><th colspan=5>Combat Skills</th></tr>
+<tr><th width="10%"><font size="-1">Off.</font></th>
+<th width="10%"><font size="-1">ID</font></th>
+<th width="35%"><font size="-1">Skill</font></th>
+<th width="10%"><font size="-1">Lvl</font></th>
+<th width="35%"><font size="-1">Prerequisites</font></th></tr>
+<tr><td align=center><font size="-1">0</font></td>
+<td align=center><font size="-1">96</font></td>
+<td align=center><font size="-1">Sacrifice</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">1</font></td>
+<td align=center><font size="-1">97</font></td>
+<td align=center><font size="-1">Smite</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">5</font></td>
+<td align=center><font size="-1">101</font></td>
+<td align=center><font size="-1">Holy Bolt</font></td>
+<td align=center><font size="-1">6</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">10</font></td>
+<td align=center><font size="-1">106</font></td>
+<td align=center><font size="-1">Zeal</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Sacrifice</font></td></tr>
+<tr><td align=center><font size="-1">11</font></td>
+<td align=center><font size="-1">107</font></td>
+<td align=center><font size="-1">Charge</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Smite</font></td></tr>
+<tr><td align=center><font size="-1">15</font></td>
+<td align=center><font size="-1">111</font></td>
+<td align=center><font size="-1">Vengeance</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Zeal</font></td></tr>
+<tr><td align=center><font size="-1">16</font></td>
+<td align=center><font size="-1">112</font></td>
+<td align=center><font size="-1">Blessed Hammer</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Holy Bolt</font></td></tr>
+<tr><td align=center><font size="-1">20</font></td>
+<td align=center><font size="-1">116</font></td>
+<td align=center><font size="-1">Conversion</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Vengeance</font></td></tr>
+<tr><td align=center><font size="-1">21</font></td>
+<td align=center><font size="-1">117</font></td>
+<td align=center><font size="-1">Holy Shield</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Charge,<br>Blessed Hammer</font></td></tr>
+<tr><td align=center><font size="-1">25</font></td>
+<td align=center><font size="-1">121</font></td>
+<td align=center><font size="-1">Fist of the Heavens</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Blessed Hammer,<br>Conversion</font></td></tr>
+</table></td>
+<td width="5%"></td>
+<td valign=top><table border cellspacing=0 width="100%">
+<tr><th colspan=5>Offensive Auras</th></tr>
+<tr><th width="10%"><font size="-1">Off.</font></th>
+<th width="10%"><font size="-1">ID</font></th>
+<th width="35%"><font size="-1">Skill</font></th>
+<th width="10%"><font size="-1">Lvl</font></th>
+<th width="35%"><font size="-1">Prerequisites</font></th></tr>
+<tr><td align=center><font size="-1">2</font></td>
+<td align=center><font size="-1">98</font></td>
+<td align=center><font size="-1">Might</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">6</font></td>
+<td align=center><font size="-1">102</font></td>
+<td align=center><font size="-1">Holy Fire</font></td>
+<td align=center><font size="-1">6</font></td>
+<td align=center><font size="-1">Might</font></td></tr>
+<tr><td align=center><font size="-1">7</font></td>
+<td align=center><font size="-1">103</font></td>
+<td align=center><font size="-1">Thorns</font></td>
+<td align=center><font size="-1">6</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">108</font></td>
+<td align=center><font size="-1">Blessed Aim</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Might</font></td></tr>
+<tr><td align=center><font size="-1">17</font></td>
+<td align=center><font size="-1">113</font></td>
+<td align=center><font size="-1">Concentration</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Blessed Aim</font></td></tr>
+<tr><td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">114</font></td>
+<td align=center><font size="-1">Holy Freeze</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Holy Fire</font></td></tr>
+<tr><td align=center><font size="-1">22</font></td>
+<td align=center><font size="-1">118</font></td>
+<td align=center><font size="-1">Holy Shock</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Holy Freeze</font></td></tr>
+<tr><td align=center><font size="-1">23</font></td>
+<td align=center><font size="-1">119</font></td>
+<td align=center><font size="-1">Sanctuary</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Thorns,<br>Holy Freeze</font></td></tr>
+<tr><td align=center><font size="-1">26</font></td>
+<td align=center><font size="-1">122</font></td>
+<td align=center><font size="-1">Fanaticism</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Concentration</font></td></tr>
+<tr><td align=center><font size="-1">27</font></td>
+<td align=center><font size="-1">123</font></td>
+<td align=center><font size="-1">Conviction</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Sanctuary</font></td></tr>
+</table></td>
+<td width="5%"></td>
+<td valign=top><table border cellspacing=0 width="100%">
+<tr><th colspan=5>Defensive Auras</th></tr>
+<tr><th width="10%"><font size="-1">Off.</font></th>
+<th width="10%"><font size="-1">ID</font></th>
+<th width="35%"><font size="-1">Skill</font></th>
+<th width="10%"><font size="-1">Lvl</font></th>
+<th width="35%"><font size="-1">Prerequisites</font></th></tr>
+<tr><td align=center><font size="-1">3</font></td>
+<td align=center><font size="-1">99</font></td>
+<td align=center><font size="-1">Prayer</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">4</font></td>
+<td align=center><font size="-1">100</font></td>
+<td align=center><font size="-1">Resist Fire</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">8</font></td>
+<td align=center><font size="-1">104</font></td>
+<td align=center><font size="-1">Defiance</font></td>
+<td align=center><font size="-1">6</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">9</font></td>
+<td align=center><font size="-1">105</font></td>
+<td align=center><font size="-1">Resist Cold</font></td>
+<td align=center><font size="-1">6</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">13</font></td>
+<td align=center><font size="-1">109</font></td>
+<td align=center><font size="-1">Cleansing</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Prayer</font></td></tr>
+<tr><td align=center><font size="-1">14</font></td>
+<td align=center><font size="-1">110</font></td>
+<td align=center><font size="-1">Resist Lightning</font></td>
+<td align=center><font size="-1">12</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">19</font></td>
+<td align=center><font size="-1">115</font></td>
+<td align=center><font size="-1">Vigor</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Cleansing,<br>Defiance</font></td></tr>
+<tr><td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">120</font></td>
+<td align=center><font size="-1">Meditation</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Cleansing</font></td></tr>
+<tr><td align=center><font size="-1">28</font></td>
+<td align=center><font size="-1">124</font></td>
+<td align=center><font size="-1">Redemption</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Vigor</font></td></tr>
+<tr><td align=center><font size="-1">29</font></td>
+<td align=center><font size="-1">125</font></td>
+<td align=center><font size="-1">Salvation</font></td>
+<td align=center><font size="-1">30</font></td>
+<td>&nbsp;</td></tr>
+</table></td>
+</table>
+
+<br>
+
+<table border cellspacing=0 align=center>
+<tr><th colspan=5><font size="+1">Barbarian Skills</font></th></tr>
+<tr><td valign=top><table border cellspacing=0 width="100%">
+<tr><th colspan=5>Combat Skills</th></tr>
+<tr><th width="10%"><font size="-1">Off.</font></th>
+<th width="10%"><font size="-1">ID</font></th>
+<th width="35%"><font size="-1">Skill</font></th>
+<th width="10%"><font size="-1">Lvl</font></th>
+<th width="35%"><font size="-1">Prerequisites</font></th></tr>
+<tr><td align=center><font size="-1">0</font></td>
+<td align=center><font size="-1">126</font></td>
+<td align=center><font size="-1">Bash</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">6</font></td>
+<td align=center><font size="-1">132</font></td>
+<td align=center><font size="-1">Leap</font></td>
+<td align=center><font size="-1">6</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">7</font></td>
+<td align=center><font size="-1">133</font></td>
+<td align=center><font size="-1">Double Swing</font></td>
+<td align=center><font size="-1">6</font></td>
+<td align=center><font size="-1">Bash</font></td></tr>
+<tr><td align=center><font size="-1">13</font></td>
+<td align=center><font size="-1">139</font></td>
+<td align=center><font size="-1">Stun</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Bash</font></td></tr>
+<tr><td align=center><font size="-1">14</font></td>
+<td align=center><font size="-1">140</font></td>
+<td align=center><font size="-1">Double Throw</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Double Swing</font></td></tr>
+<tr><td align=center><font size="-1">17</font></td>
+<td align=center><font size="-1">143</font></td>
+<td align=center><font size="-1">Leap Attack</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Leap</font></td></tr>
+<tr><td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">144</font></td>
+<td align=center><font size="-1">Concentrate</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Stun</font></td></tr>
+<tr><td align=center><font size="-1">21</font></td>
+<td align=center><font size="-1">147</font></td>
+<td align=center><font size="-1">Frenzy</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Double Throw</font></td></tr>
+<tr><td align=center><font size="-1">25</font></td>
+<td align=center><font size="-1">151</font></td>
+<td align=center><font size="-1">Whirlwind</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Leap Attack,<br>Concentrate</font></td></tr>
+<tr><td align=center><font size="-1">26</font></td>
+<td align=center><font size="-1">152</font></td>
+<td align=center><font size="-1">Berserk</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Concentrate</font></td></tr>
+</table></td>
+<td width="5%"></td>
+<td valign=top><table border cellspacing=0 width="100%">
+<tr><th colspan=5>Combat Masteries</th></tr>
+<tr><th width="10%"><font size="-1">Off.</font></th>
+<th width="10%"><font size="-1">ID</font></th>
+<th width="35%"><font size="-1">Skill</font></th>
+<th width="10%"><font size="-1">Lvl</font></th>
+<th width="35%"><font size="-1">Prerequisites</font></th></tr>
+<tr><td align=center><font size="-1">1</font></td>
+<td align=center><font size="-1">127</font></td>
+<td align=center><font size="-1">Sword Mastery</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">2</font></td>
+<td align=center><font size="-1">128</font></td>
+<td align=center><font size="-1">Axe Mastery</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">3</font></td>
+<td align=center><font size="-1">129</font></td>
+<td align=center><font size="-1">Mace Mastery</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">8</font></td>
+<td align=center><font size="-1">134</font></td>
+<td align=center><font size="-1">Pole Arm Mastery</font></td>
+<td align=center><font size="-1">6</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">9</font></td>
+<td align=center><font size="-1">135</font></td>
+<td align=center><font size="-1">Throwing Mastery</font></td>
+<td align=center><font size="-1">6</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">10</font></td>
+<td align=center><font size="-1">136</font></td>
+<td align=center><font size="-1">Spear Mastery</font></td>
+<td align=center><font size="-1">6</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">15</font></td>
+<td align=center><font size="-1">141</font></td>
+<td align=center><font size="-1">Increased Stamina</font></td>
+<td align=center><font size="-1">12</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">19</font></td>
+<td align=center><font size="-1">145</font></td>
+<td align=center><font size="-1">Iron Skin</font></td>
+<td align=center><font size="-1">18</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">22</font></td>
+<td align=center><font size="-1">148</font></td>
+<td align=center><font size="-1">Increased Speed</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Increased Stamina</font></td></tr>
+<tr><td align=center><font size="-1">27</font></td>
+<td align=center><font size="-1">153</font></td>
+<td align=center><font size="-1">Natural Resistance</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Iron Skin</font></td></tr>
+</table></td>
+<td width="5%"></td>
+<td valign=top><table border cellspacing=0 width="100%">
+<tr><th colspan=5>Warcries</th></tr>
+<tr><th width="10%"><font size="-1">Off.</font></th>
+<th width="10%"><font size="-1">ID</font></th>
+<th width="35%"><font size="-1">Skill</font></th>
+<th width="10%"><font size="-1">Lvl</font></th>
+<th width="35%"><font size="-1">Prerequisites</font></th></tr>
+<tr><td align=center><font size="-1">4</font></td>
+<td align=center><font size="-1">130</font></td>
+<td align=center><font size="-1">Howl</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">5</font></td>
+<td align=center><font size="-1">131</font></td>
+<td align=center><font size="-1">Find Potion</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">11</font></td>
+<td align=center><font size="-1">137</font></td>
+<td align=center><font size="-1">Taunt</font></td>
+<td align=center><font size="-1">6</font></td>
+<td align=center><font size="-1">Howl</font></td></tr>
+<tr><td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">138</font></td>
+<td align=center><font size="-1">Shout</font></td>
+<td align=center><font size="-1">6</font></td>
+<td align=center><font size="-1">Howl</font></td></tr>
+<tr><td align=center><font size="-1">16</font></td>
+<td align=center><font size="-1">142</font></td>
+<td align=center><font size="-1">Find Item</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Find Potion</font></td></tr>
+<tr><td align=center><font size="-1">20</font></td>
+<td align=center><font size="-1">146</font></td>
+<td align=center><font size="-1">Battle Cry</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Taunt</font></td></tr>
+<tr><td align=center><font size="-1">23</font></td>
+<td align=center><font size="-1">149</font></td>
+<td align=center><font size="-1">Battle Orders</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Shout</font></td></tr>
+<tr><td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">150</font></td>
+<td align=center><font size="-1">Grim Ward</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Find Item</font></td></tr>
+<tr><td align=center><font size="-1">28</font></td>
+<td align=center><font size="-1">154</font></td>
+<td align=center><font size="-1">War Cry</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Battle Cry,<br>Battle Orders</font></td></tr>
+<tr><td align=center><font size="-1">29</font></td>
+<td align=center><font size="-1">155</font></td>
+<td align=center><font size="-1">Battle Command</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Battle Orders</font></td></tr>
+</table></td>
+</table>
+
+<br>
+
+<table border cellspacing=0 align=center>
+<tr><th colspan=5><font size="+1">Druid Skills</font></th></tr>
+<tr><td valign=top><table border cellspacing=0 width="100%">
+<tr><th colspan=5>Summoning</th></tr>
+<tr><th width="10%"><font size="-1">Off.</font></th>
+<th width="10%"><font size="-1">ID</font></th>
+<th width="35%"><font size="-1">Skill</font></th>
+<th width="10%"><font size="-1">Lvl</font></th>
+<th width="35%"><font size="-1">Prerequisites</font></th></tr>
+<tr><td align=center><font size="-1">0</font></td>
+<td align=center><font size="-1">221</font></td>
+<td align=center><font size="-1">Raven</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">1</font></td>
+<td align=center><font size="-1">222</font></td>
+<td align=center><font size="-1">Plague Poppy</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">5</font></td>
+<td align=center><font size="-1">226</font></td>
+<td align=center><font size="-1">Oak Sage</font></td>
+<td align=center><font size="-1">6</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">6</font></td>
+<td align=center><font size="-1">227</font></td>
+<td align=center><font size="-1">Summon Spirit Wolf</font></td>
+<td align=center><font size="-1">6</font></td>
+<td align=center><font size="-1">Raven</font></td></tr>
+<tr><td align=center><font size="-1">10</font></td>
+<td align=center><font size="-1">231</font></td>
+<td align=center><font size="-1">Cycle of Life</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Plague Poppy</font></td></tr>
+<tr><td align=center><font size="-1">15</font></td>
+<td align=center><font size="-1">236</font></td>
+<td align=center><font size="-1">Heart of Wolverine</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Oak Sage</font></td></tr>
+<tr><td align=center><font size="-1">16</font></td>
+<td align=center><font size="-1">237</font></td>
+<td align=center><font size="-1">Summon Fenris</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Oak Sage,<br>Summon Spirit Wolf</font></td></tr>
+<tr><td align=center><font size="-1">20</font></td>
+<td align=center><font size="-1">241</font></td>
+<td align=center><font size="-1">Vines</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Cycle of Life</font></td></tr>
+<tr><td align=center><font size="-1">25</font></td>
+<td align=center><font size="-1">246</font></td>
+<td align=center><font size="-1">Spirit of Barbs</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Heart of Wolverine</font></td></tr>
+<tr><td align=center><font size="-1">26</font></td>
+<td align=center><font size="-1">247</font></td>
+<td align=center><font size="-1">Summon Grizzly</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Summon Fenris</font></td></tr>
+</table></td>
+<td width="5%"></td>
+<td valign=top><table border cellspacing=0 width="100%">
+<tr><th colspan=5>Shape Shifting</th></tr>
+<tr><th width="10%"><font size="-1">Off.</font></th>
+<th width="10%"><font size="-1">ID</font></th>
+<th width="35%"><font size="-1">Skill</font></th>
+<th width="10%"><font size="-1">Lvl</font></th>
+<th width="35%"><font size="-1">Prerequisites</font></th></tr>
+<tr><td align=center><font size="-1">2</font></td>
+<td align=center><font size="-1">223</font></td>
+<td align=center><font size="-1">Wearwolf</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">3</font></td>
+<td align=center><font size="-1">224</font></td>
+<td align=center><font size="-1">Shape Shifting</font></td>
+<td align=center><font size="-1">1</font></td>
+<td align=center><font size="-1">Wearwolf</font></td></tr>
+<tr><td align=center><font size="-1">7</font></td>
+<td align=center><font size="-1">228</font></td>
+<td align=center><font size="-1">Wearbear</font></td>
+<td align=center><font size="-1">6</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">11</font></td>
+<td align=center><font size="-1">232</font></td>
+<td align=center><font size="-1">Feral Rage</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Wearwolf</font></td></tr>
+<tr><td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">233</font></td>
+<td align=center><font size="-1">Maul</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Wearbear</font></td></tr>
+<tr><td align=center><font size="-1">17</font></td>
+<td align=center><font size="-1">238</font></td>
+<td align=center><font size="-1">Rabies</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Feral Rage</font></td></tr>
+<tr><td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">239</font></td>
+<td align=center><font size="-1">Fire Claws</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Feral Rage,<br>Maul</font></td></tr>
+<tr><td align=center><font size="-1">21</font></td>
+<td align=center><font size="-1">242</font></td>
+<td align=center><font size="-1">Hunger</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Fire Claws</font></td></tr>
+<tr><td align=center><font size="-1">22</font></td>
+<td align=center><font size="-1">243</font></td>
+<td align=center><font size="-1">Shock Wave</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Maul</font></td></tr>
+<tr><td align=center><font size="-1">27</font></td>
+<td align=center><font size="-1">248</font></td>
+<td align=center><font size="-1">Fury</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Rabies</font></td></tr>
+</table></td>
+<td width="5%"></td>
+<td valign=top><table border cellspacing=0 width="100%">
+<tr><th colspan=5>Elemental</th></tr>
+<tr><th width="10%"><font size="-1">Off.</font></th>
+<th width="10%"><font size="-1">ID</font></th>
+<th width="35%"><font size="-1">Skill</font></th>
+<th width="10%"><font size="-1">Lvl</font></th>
+<th width="35%"><font size="-1">Prerequisites</font></th></tr>
+<tr><td align=center><font size="-1">4</font></td>
+<td align=center><font size="-1">225</font></td>
+<td align=center><font size="-1">Firestorm</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">8</font></td>
+<td align=center><font size="-1">229</font></td>
+<td align=center><font size="-1">Molten Boulder</font></td>
+<td align=center><font size="-1">6</font></td>
+<td align=center><font size="-1">Firestorm</font></td></tr>
+<tr><td align=center><font size="-1">9</font></td>
+<td align=center><font size="-1">230</font></td>
+<td align=center><font size="-1">Arctic Blast</font></td>
+<td align=center><font size="-1">6</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">13</font></td>
+<td align=center><font size="-1">234</font></td>
+<td align=center><font size="-1">Eruption</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Molten Boulder</font></td></tr>
+<tr><td align=center><font size="-1">14</font></td>
+<td align=center><font size="-1">235</font></td>
+<td align=center><font size="-1">Cyclone Armor</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Arctic Blast</font></td></tr>
+<tr><td align=center><font size="-1">19</font></td>
+<td align=center><font size="-1">240</font></td>
+<td align=center><font size="-1">Twister</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Cyclone Armor</font></td></tr>
+<tr><td align=center><font size="-1">23</font></td>
+<td align=center><font size="-1">244</font></td>
+<td align=center><font size="-1">Volcano</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Eruption</font></td></tr>
+<tr><td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">245</font></td>
+<td align=center><font size="-1">Tornado</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Twister</font></td></tr>
+<tr><td align=center><font size="-1">28</font></td>
+<td align=center><font size="-1">249</font></td>
+<td align=center><font size="-1">Armageddon</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Volcano,<br>Hurricane</font></td></tr>
+<tr><td align=center><font size="-1">29</font></td>
+<td align=center><font size="-1">250</font></td>
+<td align=center><font size="-1">Hurricane</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Tornado</font></td></tr>
+</table></td>
+</table>
+
+<br>
+
+<table border cellspacing=0 align=center>
+<tr><th colspan=5><font size="+1">Assassin Skills</font></th></tr>
+<tr><td valign=top><table border cellspacing=0 width="100%">
+<tr><th colspan=5>Traps</th></tr>
+<tr><th width="10%"><font size="-1">Off.</font></th>
+<th width="10%"><font size="-1">ID</font></th>
+<th width="35%"><font size="-1">Skill</font></th>
+<th width="10%"><font size="-1">Lvl</font></th>
+<th width="35%"><font size="-1">Prerequisites</font></th></tr>
+<tr><td align=center><font size="-1">0</font></td>
+<td align=center><font size="-1">251</font></td>
+<td align=center><font size="-1">Fire Trauma</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">5</font></td>
+<td align=center><font size="-1">256</font></td>
+<td align=center><font size="-1">Shock Field</font></td>
+<td align=center><font size="-1">6</font></td>
+<td align=center><font size="-1">Fire Trauma</font></td></tr>
+<tr><td align=center><font size="-1">6</font></td>
+<td align=center><font size="-1">257</font></td>
+<td align=center><font size="-1">Blade Sentinel</font></td>
+<td align=center><font size="-1">6</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">10</font></td>
+<td align=center><font size="-1">261</font></td>
+<td align=center><font size="-1">Charged Bolt Sentry</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Shock Field</font></td></tr>
+<tr><td align=center><font size="-1">11</font></td>
+<td align=center><font size="-1">262</font></td>
+<td align=center><font size="-1">Wake of Fire Sentry</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Fire Trauma</font></td></tr>
+<tr><td align=center><font size="-1">15</font></td>
+<td align=center><font size="-1">266</font></td>
+<td align=center><font size="-1">Blade Fury</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Blade Sentinel,<br>Wake of Fire Sentry</font></td></tr>
+<tr><td align=center><font size="-1">20</font></td>
+<td align=center><font size="-1">271</font></td>
+<td align=center><font size="-1">Lightning Sentry</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Charged Bolt Sentry</font></td></tr>
+<tr><td align=center><font size="-1">21</font></td>
+<td align=center><font size="-1">272</font></td>
+<td align=center><font size="-1">Inferno Sentry</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Wake of Fire Sentry</font></td></tr>
+<tr><td align=center><font size="-1">25</font></td>
+<td align=center><font size="-1">276</font></td>
+<td align=center><font size="-1">Death Sentry</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Lightning Sentry</font></td></tr>
+<tr><td align=center><font size="-1">26</font></td>
+<td align=center><font size="-1">277</font></td>
+<td align=center><font size="-1">Blade Shield</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Blade Fury</font></td></tr>
+</table></td>
+<td width="5%"></td>
+<td valign=top><table border cellspacing=0 width="100%">
+<tr><th colspan=5>Shadow Disciplines</th></tr>
+<tr><th width="10%"><font size="-1">Off.</font></th>
+<th width="10%"><font size="-1">ID</font></th>
+<th width="35%"><font size="-1">Skill</font></th>
+<th width="10%"><font size="-1">Lvl</font></th>
+<th width="35%"><font size="-1">Prerequisites</font></th></tr>
+<tr><td align=center><font size="-1">1</font></td>
+<td align=center><font size="-1">252</font></td>
+<td align=center><font size="-1">Claw Mastery</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">2</font></td>
+<td align=center><font size="-1">253</font></td>
+<td align=center><font size="-1">Psychic Hammer</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">7</font></td>
+<td align=center><font size="-1">258</font></td>
+<td align=center><font size="-1">Quickness</font></td>
+<td align=center><font size="-1">6</font></td>
+<td align=center><font size="-1">Claw Mastery</font></td></tr>
+<tr><td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">263</font></td>
+<td align=center><font size="-1">Weapon Block</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Claw Mastery</font></td></tr>
+<tr><td align=center><font size="-1">13</font></td>
+<td align=center><font size="-1">264</font></td>
+<td align=center><font size="-1">Cloak of Shadows</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Psychic Hammer</font></td></tr>
+<tr><td align=center><font size="-1">16</font></td>
+<td align=center><font size="-1">267</font></td>
+<td align=center><font size="-1">Fade</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Quickness</font></td></tr>
+<tr><td align=center><font size="-1">17</font></td>
+<td align=center><font size="-1">268</font></td>
+<td align=center><font size="-1">Shadow Warrior</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Cloak of Shadows,<br>Weapon Block</font></td></tr>
+<tr><td align=center><font size="-1">22</font></td>
+<td align=center><font size="-1">273</font></td>
+<td align=center><font size="-1">Mind Blast</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Cloak of Shadows</font></td></tr>
+<tr><td align=center><font size="-1">27</font></td>
+<td align=center><font size="-1">278</font></td>
+<td align=center><font size="-1">Venom</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Fade</font></td></tr>
+<tr><td align=center><font size="-1">28</font></td>
+<td align=center><font size="-1">279</font></td>
+<td align=center><font size="-1">Shadow Master</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Shadow Warrior</font></td></tr>
+</table></td>
+<td width="5%"></td>
+<td valign=top><table border cellspacing=0 width="100%">
+<tr><th colspan=5>Martial Arts</th></tr>
+<tr><th width="10%"><font size="-1">Off.</font></th>
+<th width="10%"><font size="-1">ID</font></th>
+<th width="35%"><font size="-1">Skill</font></th>
+<th width="10%"><font size="-1">Lvl</font></th>
+<th width="35%"><font size="-1">Prerequisites</font></th></tr>
+<tr><td align=center><font size="-1">3</font></td>
+<td align=center><font size="-1">254</font></td>
+<td align=center><font size="-1">Tiger Strike</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">4</font></td>
+<td align=center><font size="-1">255</font></td>
+<td align=center><font size="-1">Dragon Talon</font></td>
+<td align=center><font size="-1">1</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">8</font></td>
+<td align=center><font size="-1">259</font></td>
+<td align=center><font size="-1">Fists of Fire</font></td>
+<td align=center><font size="-1">6</font></td>
+<td>&nbsp;</td></tr>
+<tr><td align=center><font size="-1">9</font></td>
+<td align=center><font size="-1">260</font></td>
+<td align=center><font size="-1">Dragon Claw</font></td>
+<td align=center><font size="-1">6</font></td>
+<td align=center><font size="-1">Dragon Talon</font></td></tr>
+<tr><td align=center><font size="-1">14</font></td>
+<td align=center><font size="-1">265</font></td>
+<td align=center><font size="-1">Cobra Strike</font></td>
+<td align=center><font size="-1">12</font></td>
+<td align=center><font size="-1">Tiger Strike</font></td></tr>
+<tr><td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">269</font></td>
+<td align=center><font size="-1">Claws of Thunder</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Fists of Fire</font></td></tr>
+<tr><td align=center><font size="-1">19</font></td>
+<td align=center><font size="-1">270</font></td>
+<td align=center><font size="-1">Dragon Tail</font></td>
+<td align=center><font size="-1">18</font></td>
+<td align=center><font size="-1">Dragon Claw</font></td></tr>
+<tr><td align=center><font size="-1">23</font></td>
+<td align=center><font size="-1">274</font></td>
+<td align=center><font size="-1">Blades of Ice</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Claws of Thunder</font></td></tr>
+<tr><td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">275</font></td>
+<td align=center><font size="-1">Dragon Flight</font></td>
+<td align=center><font size="-1">24</font></td>
+<td align=center><font size="-1">Dragon Tail</font></td></tr>
+<tr><td align=center><font size="-1">29</font></td>
+<td align=center><font size="-1">280</font></td>
+<td align=center><font size="-1">Royal Strike</font></td>
+<td align=center><font size="-1">30</font></td>
+<td align=center><font size="-1">Cobra Strike,<br>Blades of Ice</font></td></tr>
+</table></td>
+</table>
+
+</body>
+</html>

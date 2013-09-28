@@ -1,0 +1,1270 @@
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Trevin Beattie">
+   <meta name="Description" content="Items in your character's .d2s file decoded">
+   <meta name="Keywords" content="d2s, Diablo, v1.09, bit field, magic, item, format">
+   <meta name="Classification" content="binary file format">
+   <title>Diablo II v1.09 Magic Properties</title>
+</head>
+<body>
+
+<h1 align=center>Diablo II Item Magical Properties</h1>
+
+<h3 align=center>for Diablo II v1.09 and the Diablo II Expansion Set:
+Lord of Destruction</h3>
+
+<p align=center>Updated July 25, 2003<br>
+<i><accessed> visitors since <accessed since></i></p>
+
+<p>This page gives a detail of each magical property an item can
+have.&nbsp; See the <a href="DiabloIIv1.09_Item_Format.shtml">Item
+Format</a> page for a view of the complete item structure.</p>
+
+<p>Following the item-specific data are a variable number of variable
+length bit fields describing any magical enhancements placed on the
+item.&nbsp; Each property begins with a 9-bit identifier.&nbsp; An
+identifier of 0x1ff (all 1's) indicates the end of the property list
+... except in the event the item belongs to a set, in which case there
+will be another one or two groups of magical properties
+following.&nbsp; I have yet to determine how the length of the list is
+determined for set items.</p>
+
+<p>To read a magical property, first look up its 9-bit ID in the first
+column.&nbsp; The second column shows you how many bits to read to get
+the value associated with that property (e.g., the amount of fire
+resistance).&nbsp; The bias field, if present, tells you the amount to
+subtract from that value to get the actual amount shown in the game;
+for example, if the field for Extra Gold from Monsters has a value of
+150, and the bias is 100, your property is 50% Extra Gold.&nbsp; A few
+of the items require a little more math; these will be explained in
+the Contents column.</p>
+
+<p>Several magical properties have two or more data fields.&nbsp; Read
+these in the order listed in the table.&nbsp; Each magical property ID
+is associated with a fixed number and size of data fields.</p>
+
+<table BORDER WIDTH="100%">
+<tr>
+<th WIDTH="10%">ID (9 bits)</th>
+<th WIDTH="10%">Size of the Following Field</th>
+<th WIDTH="5%">Bias</th>
+<th>Contents</th>
+</tr>
+
+<tr>
+<td align=center>0</td><td align=center>7</td><td align=center>32</td>
+<td>+<i>X</i> to Strength</td>
+</tr>
+
+<tr>
+<td align=center>1</td><td align=center>7</td><td align=center>32</td>
+<td>+<i>X</i> to Energy</td>
+</tr>
+
+<tr>
+<td align=center>2</td><td align=center>7</td><td align=center>32</td>
+<td>+<i>X</i> to Dexterity</td>
+</tr>
+
+<tr>
+<td align=center>3</td><td align=center>7</td><td align=center>32</td>
+<td>+<i>X</i> to Vitality</td>
+</tr>
+
+<tr>
+<td align=center>7</td><td align=center>8</td><td align=center>32</td>
+<td>+<i>X</i> to Life</td>
+</tr>
+
+<tr>
+<td align=center>9</td><td align=center>8</td><td align=center>32</td>
+<td>+<i>X</i> to Mana</td>
+</tr>
+
+<tr>
+<td align=center>11</td><td align=center>8</td><td align=center>32</td>
+<td>+<i>X</i> to Maximum Stamina</td>
+</tr>
+
+<tr>
+<td align=center>16</td><td align=center>9</td><td></td>
+<td>+<i>X</i>% Enhanced Defense</td>
+</tr>
+
+<tr>
+<td ROWSPAN="2" align=center>17</td><td align=center>9</td><td></td>
+<td ROWSPAN="2"><div>+<i>X</i>% Enhanced Damage</div>
+<div><i>Note: In all of the items I've examined, the two data fields have
+the same value.</i></div>
+<div><i>"Jesus on Bass" suggests that one data field enhances minimum
+damage while the other field enhances maximum damage.&nbsp; I have
+experimented and confirmed that the first field enhances your maximum
+damage, and the second field enhances the minimum damage.</i></div></td>
+</tr>
+<tr><td align=center>9</td></tr>
+
+<tr>
+<td align=center>19</td><td align=center>10</td><td></td>
+<td>+<i>X</i> to Attack Rating</td>
+</tr>
+
+<tr>
+<td align=center>20</td><td align=center>6</td><td></td>
+<td><i>X</i>% Increased Chance of Blocking</td>
+</tr>
+
+<tr>
+<td align=center>21</td><td align=center>6</td><td></td>
+<td>+<i>X</i> to Minimum Damage</td>
+</tr>
+
+<tr>
+<td align=center>22</td><td align=center>7</td><td></td>
+<td>+<i>X</i> to Maximum Damage</td>
+</tr>
+
+<tr>
+<td align=center>23</td><td align=center>6</td><td></td>
+<td>+<i>X</i> to Minimum Damage<br>
+<i>Note: I've often, but not always, seen this property and 21
+together, and only one copy shows up in the game.&nbsp; I'm not sure
+what the difference is.</i></td>
+</tr>
+
+<tr>
+<td align=center>24</td><td align=center>7</td><td></td>
+<td>+<i>X</i> to Maximum Damage<br>
+<i>Note: I've often, but not always, seen this property and 22
+together, and only one copy shows up in the game.&nbsp; I'm not sure
+what the difference is.</i></td>
+</tr>
+
+<tr>
+<td align=center>27</td><td align=center>8</td><td></td>
+<td>Regenerate Mana <i>X</i>%</td>
+</tr>
+
+<tr>
+<td align=center>28</td><td align=center>8</td><td></td>
+<td>Heal Stamina <i>X</i>%</td>
+</tr>
+
+<tr>
+<td align=center>31</td><td align=center>10</td><td align=center>10</td>
+<td>+<i>X</i> Defense</td>
+</tr>
+
+<tr>
+<td align=center>32</td><td align=center>10</td><td align=center>10</td>
+<td>+<i>X</i> Defense vs. Missile</td>
+</tr>
+
+<tr>
+<td align=center>33</td><td align=center>10</td><td align=center>10</td>
+<td>+<i>X</i> Defense vs. Melee</td>
+</tr>
+
+<tr>
+<td align=center>34</td><td align=center>6</td><td></td>
+<td>Damage Reduced by <i>X</i></td>
+</tr>
+
+<tr>
+<td align=center>35</td><td align=center>6</td><td></td>
+<td>Magic Damage Reduced by <i>X</i></td>
+</tr>
+
+<tr>
+<td align=center>36</td><td align=center>8</td><td></td>
+<td>Damage Reduced by <i>X</i>%</td>
+</tr>
+
+<tr>
+<td align=center>37</td><td align=center>8</td><td></td>
+<td>Magic Resist +<i>X</i>%</td>
+</tr>
+
+<tr>
+<td align=center>38</td><td align=center>8</td><td></td>
+<td>+<i>X</i>% to Maximum Magic Resist<br>
+<i>A huge thanks goes to Gollen of Hungary for providing a table that
+revealed this and many other codes in this table.</i></td>
+</tr>
+
+<tr>
+<td align=center>39</td><td align=center>8</td><td></td>
+<td>Fire Resist +<i>X</i>%</td>
+</tr>
+
+<tr>
+<td align=center>40</td><td align=center>5</td><td></td>
+<td>+<i>X</i>% to Maximum Fire Resist</td>
+</tr>
+
+<tr>
+<td align=center>41</td><td align=center>8</td><td></td>
+<td>Lightning Resist +<i>X</i>%</td>
+</tr>
+
+<tr>
+<td align=center>42</td><td align=center>5</td><td></td>
+<td>+<i>X</i>% to Maximum Lightning Resist</td>
+</tr>
+
+<tr>
+<td align=center>43</td><td align=center>8</td><td></td>
+<td>Cold Resist +<i>X</i>%</td>
+</tr>
+
+<tr>
+<td align=center>44</td><td align=center>5</td><td></td>
+<td>+<i>X</i>% to Maximum Cold Resist</td>
+</tr>
+
+<tr>
+<td align=center>45</td><td align=center>8</td><td></td>
+<td>Poison Resist +<i>X</i>%</td>
+</tr>
+
+<tr>
+<td align=center>46</td><td align=center>5</td><td></td>
+<td>+<i>X</i>% to Maximum Poison Resist</td>
+</tr>
+
+<tr>
+<td ROWSPAN="2" align=center>48</td><td align=center>8</td><td></td>
+<td ROWSPAN="2">Adds <i>X</i>-<i>Y</i> fire damage</td>
+</tr>
+<tr><td align=center>8</td></tr>
+
+<tr>
+<td ROWSPAN="2" align=center>50</td><td align=center>6</td><td></td>
+<td ROWSPAN="2">Adds <i>X</i>-<i>Y</i> lightning damage</td>
+</tr>
+<tr><td align=center>9</td></tr>
+
+<tr>
+<td ROWSPAN="2" align=center>52</td><td align=center>6</td><td></td>
+<td ROWSPAN="2">Adds <i>X</i>-<i>Y</i> magic damage<br>
+<i>contributed by Clement Lau -- thanks!</i></td>
+</tr>
+<tr><td align=center>7</td></tr>
+
+<tr>
+<td ROWSPAN="3" align=center>54</td><td align=center>6</td><td></td>
+<td ROWSPAN="2">Adds <i>X</i>-<i>Y</i> cold damage</td>
+</tr>
+<tr><td align=center>8</td></tr>
+<tr><td align=center>8</td><td></td>
+<td><i>This seems to be the duration of the cold/freeze effect.&nbsp;
+Divide the value by 25 to get the number of seconds.</i></td>
+</tr>
+
+<tr>
+<td ROWSPAN="3" align=center>57</td><td align=center>9</td><td></td>
+<td ROWSPAN="3"><p>Adds <i>X</i>-<i>Y</i> poison damage over <i>Z</i>
+seconds</p>
+<p><i>This property is a tricky one to figure out.&nbsp; For the
+mathematically inclined, the first two fields give the minimum and
+maximum, respectively, of <sup>1</sup>/<sub>256</sub><sup>th</sup> of
+a unit of damage every <sup>1</sup>/<sub>25</sub><sup>th</sup> of a
+second.&nbsp; The third field gives the duration of the poison; you
+divide by 25 to get the number of seconds.&nbsp; Therefore, to compute
+the amount of damage shown in the game, multiply the first field by
+the third and divide by 256.&nbsp; (Repeat with the second
+field.)</p>
+<p>For example, if the field values are 30, 60, and 75, you get
+30*75/256=8, 60*75/256=17, and 75/25=3, so the displayed property is
+"Adds 8-17 Poison Damage over 3 seconds".</i></p></td>
+</tr>
+<tr><td align=center>9</td></tr>
+<tr><td align=center>8</td></tr>
+
+<tr>
+<td align=center>60</td><td align=center>7</td><td></td>
+<td><i>X</i>% Life stolen per hit</td>
+</tr>
+
+<tr>
+<td align=center>62</td><td align=center>7</td><td></td>
+<td><i>X</i>% Mana stolen per hit</td>
+</tr>
+
+<tr>
+<td align=center>73</td><td align=center>8</td><td align=center>30</td>
+<td>+<i>X</i> Maximum Durability</td>
+</tr>
+
+<tr>
+<td align=center>74</td><td align=center>6</td><td align=center>30</td>
+<td>Replenish Life +<i>X</i></td>
+</tr>
+
+<tr>
+<td align=center>75</td><td align=center>7</td><td align=center>20</td>
+<td>Increase Maximum Durability <i>X</i>%</td>
+</tr>
+
+<tr>
+<td align=center>76</td><td align=center>6</td><td align=center>10</td>
+<td>Increase Maximum Life <i>X</i>%</td>
+</tr>
+
+<tr>
+<td align=center>77</td><td align=center>6</td><td align=center>10</td>
+<td>Increase Maximum Mana <i>X</i>%</td>
+</tr>
+
+<tr>
+<td align=center>78</td><td align=center>7</td><td></td>
+<td>Attacker Takes Damage of <i>X</i></td>
+</tr>
+
+<tr>
+<td align=center>79</td><td align=center>9</td><td align=center>100</td>
+<td><i>X</i>% Extra Gold from Monsters</td>
+</tr>
+
+<tr>
+<td align=center>80</td><td align=center>8</td><td align=center>100</td>
+<td><i>X</i>% Better Chance of Getting Magic Items</td>
+</tr>
+
+<tr>
+<td align=center>81</td><td align=center>7</td><td></td>
+<td>Knockback<br>
+<i>I have no idea what the data field is used for.</i></td>
+</tr>
+
+<tr>
+<td align=center>83</td><td align=center>3</td><td></td>
+<td>+<i>X</i> to Amazon Skill Levels</td>
+</tr>
+
+<tr>
+<td align=center>84</td><td align=center>3</td><td></td>
+<td>+<i>X</i> to Paladin Skill Levels</td>
+</tr>
+
+<tr>
+<td align=center>85</td><td align=center>3</td><td></td>
+<td>+<i>X</i> to Necromancer Skill Levels</td>
+</tr>
+
+<tr>
+<td align=center>86</td><td align=center>3</td><td></td>
+<td>+<i>X</i> to Sorceress Skill Levels</td>
+</tr>
+
+<tr>
+<td align=center>87</td><td align=center>3</td><td></td>
+<td>+<i>X</i> to Barbarian Skill Levels</td>
+</tr>
+
+<tr>
+<td align=center>89</td><td align=center>4</td><td align=center>4</td>
+<td>+<i>X</i> to Light Radius</td>
+</tr>
+
+<tr>
+<td align=center>90</td><td align=center>5</td><td></td>
+<td><i>This property is not displayed on the item, but its effect is
+to alter the color of the ambient light.  The possible colors are:
+<table border align=center cellspacing=0>
+<tr><th>Code</th><th>Color</th><th>Code</th><th>Color</th>
+<th>Code</th><th>Color</th><th>Code</th><th>Color</th></tr>
+<tr><td align=center>0</td><td>White</td>
+<td align=center>1</td><td>Light Grey</td>
+<td align=center>2</td><td>Dark Grey</td>
+<td align=center>3</td><td>Black</td>
+<tr><td></td><td></td><td align=center>4</td><td>Light Blue</td>
+<td align=center>5</td><td>Dark Blue</td>
+<td align=center>6</td><td>Crystal Blue</td></tr>
+<tr><td></td><td></td><td align=center>7</td><td>Light Red</td>
+<td align=center>8</td><td>Dark Red</td>
+<td align=center>9</td><td>Crystal Red</td></tr>
+<tr><td></td><td></td><td align=center>10</td><td>Light Green</td>
+<td align=center>11</td><td>Dark Green</td>
+<td align=center>12</td><td>Crystal Green</td></tr>
+<tr><td></td><td></td><td align=center>13</td><td>Light Yellow</td>
+<td align=center>14</td><td>Dark Yellow</td></tr>
+<tr><td></td><td></td><td align=center>15</td><td>Light Gold</td>
+<td align=center>16</td><td>Dark Gold</td></tr>
+<tr><td></td><td></td><td align=center>17</td><td>Light Purple</td>
+<td align=center>18</td><td>Dark Purple</td></tr>
+<tr><td></td><td><td></td><td><td align=center>19</td><td>Orange</td></tr>
+<tr><td></td><td><td align=center>20</td><td>Bright White</td></tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td align=center>91</td><td align=center>8</td><td align=center>100</td>
+<td>Requirements -<i>X</i>%<br>
+<i>Note that after subtracting the bias, <i>X</i> is (usually) a
+negative number.</i></td>
+</tr>
+
+<tr>
+<td align=center>93</td><td align=center>7</td><td align=center>20</td>
+<td><i>X</i>% Increased Attack Speed</td>
+</tr>
+
+<tr>
+<td align=center>96</td><td align=center>7</td><td align=center>20</td>
+<td><i>X</i>% Faster Run/Walk</td>
+</tr>
+
+<tr>
+<td align=center>99</td><td align=center>7</td><td align=center>20</td>
+<td><i>X</i>% Faster Hit Recovery</td>
+</tr>
+
+<tr>
+<td align=center>102</td><td align=center>7</td><td align=center>20</td>
+<td><i>X</i>% Faster Block Rate</td>
+</tr>
+
+<tr>
+<td align=center>105</td><td align=center>7</td><td align=center>20</td>
+<td><i>X</i>% Faster Cast Rate</td>
+</tr>
+
+
+<tr>
+<td ROWSPAN="2" align=center>107,<br>108,<br>109,<br>181,<br>182,
+<br>183,<br>184,<br>185,<br>186,<br>187</td>
+<td align=center>9</td><td></td>
+<td ROWSPAN="2">+<i>Y</i> to <i>spell X</i> (<i>character class</i>
+Only)<br>
+This property is usually applied to class-specific items found in the
+Expansion Set.  The first value selects the skill; there are too many
+to list here, but I may provide them on another table if people ask
+nicely.  The second value determines how many additional skill points
+are given.<br>
+<i>Note that these three properties are all the same.&nbsp; I presume
+different ID's are used because you can have up to three of these (ten
+in an Expansion Set game), but no two properties for an item may have
+the same ID.</td>
+</tr>
+<tr><td align=center>5</td></tr>
+
+<tr>
+<td align=center>110</td><td align=center>8</td><td align=center>20</td>
+<td>Poison Length Reduced by <i>X</i>%</td>
+</tr>
+
+<tr>
+<td align=center>111</td><td align=center>7</td><td align=center>20</td>
+<td>Damage +<i>X</i></td>
+</tr>
+
+<tr>
+<td align=center>112</td><td align=center>7</td><td></td>
+<td>Hit Causes Monster to Flee <i>X</i>%</td>
+</tr>
+
+<tr>
+<td align=center>113</td><td align=center>7</td><td></td>
+<td>Hit Blinds Target +<i>X</i></td>
+</tr>
+
+<tr>
+<td align=center>114</td><td align=center>6</td><td></td>
+<td><i>X</i>% Damage Taken Goes to Mana</td>
+</tr>
+
+<tr>
+<td align=center>115</td><td align=center>1</td><td></td>
+<td>Ignore Target Defense<br>
+<i>The value of the data field is always 1.</i></td>
+</tr>
+
+<tr>
+<td align=center>116</td><td align=center>7</td><td></td>
+<td><i>X</i>% Target Defense</td>
+</tr>
+
+<tr>
+<td align=center>117</td><td align=center>7</td><td></td>
+<td>Prevent Monster Heal<br>
+<i>The value of the data field is 1; I don't know if it means
+anything.</i></td>
+</tr>
+
+<tr>
+<td align=center>118</td><td align=center>1</td><td></td>
+<td>Half Freeze Duration<br>
+<i>The value of the data field is always 1.</i></td>
+</tr>
+
+<tr>
+<td align=center>119</td><td align=center>9</td><td align=center>20</td>
+<td><i>X</i>% Bonus to Attack Rating</td>
+</tr>
+
+<tr>
+<td align=center>120</td><td align=center>7</td><td align=center>128</td>
+<td><i>X</i> to Monster Defense Per Hit</td>
+</tr>
+
+<tr>
+<td align=center>121</td><td align=center>9</td><td align=center>20</td>
+<td>+<i>X</i>% Damage to Demons</td>
+</tr>
+
+<tr>
+<td align=center>122</td><td align=center>9</td><td align=center>20</td>
+<td>+<i>X</i>% Damage to Undead<br>
+<i>Note that many types of weapon have a certain amount of this
+property inherent in the weapon class, usually with values of 50% or
+150%.&nbsp; This property is added on top of the weapon's base Damage
+to Undead.  For example, a flail may have a base rating of 50% Damage
+to Undead.  If this magic property is added to it with a value of 121,
+then the displayed value is 121-20+50=151%.</i></td>
+</tr>
+
+<tr>
+<td align=center>123</td><td align=center>10</td><td align=center>128</td>
+<td>+<i>X</i> to Attack Rating against Demons</td>
+</tr>
+
+<tr>
+<td align=center>124</td><td align=center>10</td><td align=center>128</td>
+<td>+<i>X</i> to Attack Rating against Undead</td>
+</tr>
+
+<tr>
+<td align=center>126</td><td align=center>4</td><td></td>
+<td>+<i>X</i> to Fire Skills</td>
+</tr>
+
+<tr>
+<td align=center>127</td><td align=center>3</td><td></td>
+<td>+<i>X</i> to All Skill Levels</td>
+</tr>
+
+<tr>
+<td align=center>128</td><td align=center>5</td><td></td>
+<td>Attacker Takes Lightning Damage of <i>X</i></td>
+</tr>
+
+<tr>
+<td align=center>134</td><td align=center>5</td><td></td>
+<td>Freezes Target</td>
+</tr>
+
+<tr>
+<td align=center>135</td><td align=center>7</td><td></td>
+<td><i>X</i>% Chance of Open Wounds</td>
+</tr>
+
+<tr>
+<td align=center>136</td><td align=center>7</td><td></td>
+<td><i>X</i>% Chance of Crushing Blow</td>
+</tr>
+
+<tr>
+<td align=center>137</td><td align=center>7</td><td></td>
+<td>+<i>X</i> Kick Damage</td>
+</tr>
+
+<tr>
+<td align=center>138</td><td align=center>7</td><td></td>
+<td>+<i>X</i> to Mana After Each Kill</td>
+</tr>
+
+<tr>
+<td align=center>139</td><td align=center>7</td><td></td>
+<td>+<i>X</i> Life after each Demon Kill</td>
+</tr>
+
+<tr>
+<td align=center>140</td><td align=center>7</td><td></td>
+<td><i>Unknown.&nbsp; This property actually doesn't show up in the
+item's description.&nbsp; Found it on the Swordback Hold Spiked
+Shield.</i></td>
+</tr>
+
+<tr>
+<td align=center>141</td><td align=center>7</td><td></td>
+<td><i>X</i>% Deadly Strike</td>
+</tr>
+
+<tr>
+<td align=center>142</td><td align=center>7</td><td></td>
+<td>Fire Absorb <i>X</i>%<br>
+<i>A huge thanks goes to Gollen of Hungary for providing a table that
+revealed this and many other codes in this table.</i></td>
+</tr>
+
+<tr>
+<td align=center>143</td><td align=center>7</td><td></td>
+<td><i>X</i> Fire Absorb</td>
+</tr>
+
+<tr>
+<td align=center>144</td><td align=center>7</td><td></td>
+<td>Lightning Absorb <i>X</i>%</td>
+</tr>
+
+<tr>
+<td align=center>145</td><td align=center>7</td><td></td>
+<td><i>X</i> Lightning Absorb</td>
+</tr>
+
+<tr>
+<td align=center>146</td><td align=center>7</td><td></td>
+<td>Magic Absorb <i>X</i>%</td>
+</tr>
+
+<tr>
+<td align=center>147</td><td align=center>7</td><td></td>
+<td><i>X</i> Magic Absorb</td>
+</tr>
+
+<tr>
+<td align=center>148</td><td align=center>7</td><td></td>
+<td>Cold Absorb <i>X</i>%</td>
+</tr>
+
+<tr>
+<td align=center>149</td><td align=center>7</td><td></td>
+<td><i>X</i> Cold Absorb</td>
+</tr>
+
+<tr>
+<td align=center>150</td><td align=center>7</td><td></td>
+<td>Slows Target by <i>X</i>%</td>
+</tr>
+
+<tr>
+<td align=center>151</td><td align=center>7</td><td></td>
+<td>Blessed Aim</td>
+</tr>
+
+<tr>
+<td align=center>152</td><td align=center>7</td><td></td>
+<td>Defiance</td>
+</tr>
+
+<tr>
+<td align=center>153</td><td align=center>1</td><td></td>
+<td>Cannot Be Frozen</td>
+</tr>
+
+<tr>
+<td align=center>154</td><td align=center>7</td><td></td>
+<td><i>X</i>% Slower Stamina Drain</td>
+</tr>
+
+<tr>
+<td align=center>155</td><td align=center>7</td><td></td>
+<td><i>X</i>% Chance to Reanimate Target</td>
+</tr>
+
+<tr>
+<td align=center>156</td><td align=center>7</td><td></td>
+<td>Piercing Attack</td>
+</tr>
+
+<tr>
+<td align=center>157</td><td align=center>7</td><td></td>
+<td>Fires Magic Arrows<br>
+<i>contributed by Chris Moore -- thanks!</i></td>
+</tr>
+
+<tr>
+<td align=center>158</td><td align=center>7</td><td></td>
+<td>Fires Explosive Arrows or Bolts</td>
+</tr>
+
+<tr>
+<td align=center>159</td><td align=center>6</td><td></td>
+<td>+<i>X</i> to Minimum Damage<br>
+<i>I've never seen this by itself; it's always been accompanied by
+properties 21 and 23.</i></td>
+</tr>
+
+<tr>
+<td align=center>160</td><td align=center>7</td><td></td>
+<td>+<i>X</i> to Maximum Damage<br>
+<i>I've never seen this by itself; it's always been accompanied by
+properties 22 and 24.</i></td>
+</tr>
+
+<tr>
+<td align=center>179</td><td align=center>3</td><td></td>
+<td>+<i>X</i> to Druid Skill Levels</td>
+</tr>
+
+<tr>
+<td align=center>180</td><td align=center>3</td><td></td>
+<td>+<i>X</i> to Assassin Skill Levels</td>
+</tr>
+
+<tr>
+<td ROWSPAN="2" align=center>188,<br>189,<br>190,<br>191,<br>192,<br>193</td>
+<td align=center>5</td><td></td>
+<td ROWSPAN="2">+<i>Y</i> to <i>skill set X</i> Skills
+(<i>character class</i> Only)<br>
+Skill sets are as follows:
+<table border align=center cellspacing=0>
+<tr><th>Class</th><th>Code</th><th>Skill Set</th>
+<th>Code</th><th>Skill Set</th><th>Code</th><th>Skill Set</th></tr>
+<tr><td align=center>Amazon</td><td align=center>0</td><td>Bow and Crossbow Skills</td>
+<td align=center>1</td><td>Passive and Magic Skills</td>
+<td align=center>2</td><td>Javelin and Spear Skills</td></tr>
+<tr><td align=center>Sorceress</td><td align=center>3</td><td>Fire Spells</td>
+<td align=center>4</td><td>Lightning Spells</td>
+<td align=center>5</td><td>Cold Spells</td></tr>
+<tr><td align=center>Necromancer</td><td align=center>6</td><td>Poison and Bone Spells</td>
+<td align=center>7</td><td>Summoning Spells</td>
+<td align=center>8</td><td>Curses</td></tr>
+<tr><td align=center>Paladin</td><td align=center>9</td><td>Combat Skills</td>
+<td align=center>10</td><td>Offensive Auras</td>
+<td align=center>11</td><td>Defensive Auras</td></tr>
+<tr><td align=center>Barbarian</td><td align=center>12</td><td>Combat Skills</td>
+<td align=center>13</td><td>Combat Masteries</td>
+<td align=center>14</td><td>Warcries</td></tr>
+<tr><td align=center>Druid</td><td align=center>15</td><td>Summoning</td>
+<td align=center>16</td><td>Shape Shifting</td>
+<td align=center>17</td><td>Elemental</td></tr>
+<tr><td align=center>Assassin</td><td align=center>18</td><td>Traps</td>
+<td align=center>19</td><td>Shadow Disciplines</td>
+<td align=center>20</td><td>Martial Arts</td></tr>
+</table>
+</td>
+</tr>
+<tr><td align=center>5</td></tr>
+
+<tr>
+<td align=center>194</td><td align=center>4</td><td></td>
+<td><i>Adds </i>X<i> extra sockets to the item.<br>This is simply
+added to the item's <a
+href="DiabloIIv1.09_Item_Format.shtml#sockets">natural number of
+sockets</a>.  It has no effect if the item is not already socketed.
+This property may allow an item to have more sockets than the maximum
+normally permitted on the item.</i><br>
+<b>Warning:</b> <i>If you give an item too many sockets, you run the
+risk of being unable to load the character with strange
+errors!  And even if the game does load successfully, it could crash
+when you add too many gems to the item!</i></td>
+</tr>
+
+<tr>
+<td ROWSPAN="3" align=center>195,<br>196,<br>197</td>
+<td align=center>9</td><td></td>
+<td ROWSPAN="3"><i>Z</i>% Chance to cast level <i>Y</i> <i>spell X</i>
+on attack<br>
+The first value selects the spell, which coincidentally matches the
+class skills as used in property #107 above.</td>
+</tr>
+<tr><td align=center>5</td></tr>
+<tr><td align=center>7</td></tr>
+
+<tr>
+<td ROWSPAN="3" align=center>198,<br>199,<br>200</td>
+<td align=center>9</td><td></td>
+<td ROWSPAN="3"><i>Z</i>% Chance to cast level <i>Y</i> <i>spell X</i>
+on striking<br>
+The first value selects the spell, which coincidentally matches the
+class skills as used in property #107 above.</td>
+</tr>
+<tr><td align=center>5</td></tr>
+<tr><td align=center>7</td></tr>
+
+<tr>
+<td ROWSPAN="3" align=center>201,<br>202,<br>203</td>
+<td align=center>9</td><td></td>
+<td ROWSPAN="3"><i>Z</i>% Chance to cast level <i>Y</i> <i>spell X</i>
+when struck<br>
+The first value selects the spell, which coincidentally matches the
+class skills as used in property #107 above.</td>
+</tr>
+<tr><td align=center>5</td></tr>
+<tr><td align=center>7</td></tr>
+
+<tr>
+<td ROWSPAN="4" align=center>204,<br>205,<br>206,<br>207,<br>208,
+<br>209,<br>210,<br>211,<br>212,<br>213</td>
+<td align=center>9</td><td></td>
+<td ROWSPAN="4">level <i>X</i> <i>spell W</i> (<i>Y</i>/<i>Z</i>
+Charges)<br>
+The first value selects the spell, which coincidentally matches the
+class skills as used in property #107 above.&nbsp; The second value
+selects the level, the third gives the number of charges remaining in
+the item, and the last is the total number of charges the item started
+with.  This property is usually applied to rings or amulets.</td>
+</tr>
+<tr><td align=center>5</td></tr>
+<tr><td align=center>8</td></tr>
+<tr><td align=center>8</td></tr>
+
+<tr><td></td><td colspan=2 align=right><b><i>Note:</i></b></td>
+<td>Unless otherwise noted, all values Based on Character Level
+are stored in eighths, so take the number, divide by 8, multiply by
+the character level, and round down to get the result.</td>
+</tr>
+
+<tr>
+<td align=center>214</td><td align=center>6</td><td></td>
+<td>+<i>X</i> to Defense (Based on Character Level)</td>
+</tr>
+
+<tr>
+<td align=center>215</td><td align=center>6</td><td></td>
+<td><i>X</i>% Enhanced Defense (Based on Character Level)</td>
+</tr>
+
+<tr>
+<td align=center>216</td><td align=center>6</td><td></td>
+<td>+<i>X</i> to Life (Based on Character Level)</td>
+</tr>
+
+<tr>
+<td align=center>217</td><td align=center>6</td><td></td>
+<td>+<i>X</i> to Mana (Based on Character Level)</td>
+</tr>
+
+<tr>
+<td align=center>218</td><td align=center>6</td><td></td>
+<td>+<i>X</i> to Maximum Damage (Based on Character Level)</td>
+</tr>
+
+<tr>
+<td align=center>219</td><td align=center>6</td><td></td>
+<td><i>X</i>% Enhanced Maximum Damage (Based on Character Level)<br>
+<i>A huge thanks goes to Gollen of Hungary for providing a table that
+revealed this and many other codes in this table.</i></td>
+</tr>
+
+<tr>
+<td align=center>220</td><td align=center>6</td><td></td>
+<td>+<i>X</i> to Strength (Based on Character Level)</td>
+</tr>
+
+<tr>
+<td align=center>221</td><td align=center>6</td><td></td>
+<td>+<i>X</i> to Dexterity (Based on Character Level)</td>
+</tr>
+
+<tr>
+<td align=center>222</td><td align=center>6</td><td></td>
+<td>+<i>X</i> to Energy (Based on Character Level)</td>
+</tr>
+
+<tr>
+<td align=center>223</td><td align=center>6</td><td></td>
+<td>+<i>X</i> to Vitality (Based on Character Level)</td>
+</tr>
+
+<tr>
+<td align=center>224</td><td align=center>6</td><td></td>
+<td>+<i>X</i> to Attack Rating (Based on Character Level)<br>
+This value is in halves, so take the number, divide by 2, multiply by
+the character level, and round down to get the attack rating.</td>
+</tr>
+
+<tr>
+<td align=center>225</td><td align=center>6</td><td></td>
+<td><i>X</i>% Bonus to Attack Rating (Based on Character Level)<br>
+This value is in halves, so take the number, divide by 2, multiply by
+the character level, and round down to get the attack rating bonus.</td>
+</tr>
+
+<tr>
+<td align=center>226</td><td align=center>6</td><td></td>
+<td>+<i>X</i> Cold Damage (Based on Character Level)</td>
+</tr>
+
+<tr>
+<td align=center>227</td><td align=center>6</td><td></td>
+<td>+<i>X</i> Fire Damage (Based on Character Level)</td>
+</tr>
+
+<tr>
+<td align=center>228</td><td align=center>6</td><td></td>
+<td>+<i>X</i> Lightning Damage (Based on Character Level)</td>
+</tr>
+
+<tr>
+<td align=center>229</td><td align=center>6</td><td></td>
+<td>+<i>X</i> Poison Damage (Based on Character Level)</td>
+</tr>
+
+<tr>
+<td align=center>230</td><td align=center>6</td><td></td>
+<td>Cold Resist +<i>X</i>% (Based on Character Level)</td>
+</tr>
+
+<tr>
+<td align=center>231</td><td align=center>6</td><td></td>
+<td>Fire Resist +<i>X</i>% (Based on Character Level)</td>
+</tr>
+
+<tr>
+<td align=center>232</td><td align=center>6</td><td></td>
+<td>Lightning Resist +<i>X</i>% (Based on Character Level)</td>
+</tr>
+
+<tr>
+<td align=center>233</td><td align=center>6</td><td></td>
+<td>Poison Resist +<i>X</i>% (Based on Character Level)</td>
+</tr>
+
+<tr> <td align=center>234</td><td align=center>6</td><td></td>
+<td>+<i>X</i> Cold Absorb (Based on Character Level)</td>
+</tr>
+
+<tr>
+<td align=center>235</td><td align=center>6</td><td></td>
+<td>+<i>X</i> Fire Absorb (Based on Character Level)</td>
+</tr>
+
+<tr>
+<td align=center>236</td><td align=center>6</td><td></td>
+<td>+<i>X</i> Lightning Absorb (Based on Character Level)</td>
+</tr>
+
+<tr>
+<td align=center>237</td><td align=center>6</td><td></td>
+<td><i>X</i> Poison Absorb (Based on Character Level)</td>
+</tr>
+
+<tr><td></td><td colspan=2 align=right><b><i>Note:</i></b></td>
+<td>Unless otherwise noted, all values Based on Character Level
+are stored in eighths, so take the number, divide by 8, multiply by
+the character level, and round down to get the result.</td>
+</tr>
+
+<tr>
+<td align=center>238</td><td align=center>6</td><td></td>
+<td>Attacker Takes Damage of <i>X</i> (Based on Character Level)</td>
+</tr>
+
+<tr>
+<td align=center>239</td><td align=center>6</td><td></td>
+<td><i>X</i>% Extra Gold from Monsters (Based on Character Level)</td>
+</tr>
+
+<tr>
+<td align=center>240</td><td align=center>6</td><td></td>
+<td><i>X</i>% Better Chance of Getting Magic Items (Based on Character
+Level)</td>
+</tr>
+
+<tr>
+<td align=center>241</td><td align=center>6</td><td></td>
+<td>Heal Stamina Plus <i>X</i>% (Based on Character Level)</td>
+</tr>
+
+<tr>
+<td align=center>243</td><td align=center>6</td><td></td>
+<td><i>X</i>% Damage to Demons (Based on Character Level)</td>
+</tr>
+
+<tr>
+<td align=center>244</td><td align=center>6</td><td></td>
+<td><i>X</i>% Damage to Undead (Based on Character Level)</td>
+</tr>
+
+<tr>
+<td align=center>245</td><td align=center>6</td><td></td>
+<td>+<i>X</i> to Attack Rating against Demons (Based on Character
+Level)</td>
+</tr>
+
+<tr>
+<td align=center>246</td><td align=center>6</td><td></td>
+<td>+<i>X</i> to Attack Rating against Undead (Based on Character
+Level)</td>
+</tr>
+
+<tr>
+<td align=center>247</td><td align=center>6</td><td></td>
+<td><i>X</i>% Chance of Crushing Blow (Based on Character Level)</td>
+</tr>
+
+<tr>
+<td align=center>248</td><td align=center>6</td><td></td>
+<td><i>X</i>% Chance of Open Wounds (Based on Character Level)</td>
+</tr>
+
+<tr>
+<td align=center>249</td><td align=center>6</td><td></td>
+<td>+<i>X</i> Kick Damage (Based on Character Level)</td>
+</tr>
+
+<tr>
+<td align=center>250</td><td align=center>6</td><td></td>
+<td><i>X</i>% to  Deadly Strike (Based on Character Level)<br>
+<i>contributed by Chris Moore</i></td>
+</tr>
+
+<tr>
+<td align=center>252</td><td align=center>5</td><td></td>
+<td>Repairs 1 durability in <i>X</i> seconds<br>
+The value of the data field is not actually a time period, but a
+frequency in terms of the number of times durability is repaired over
+a period of 100 seconds.  For example, if the value is 5, then this
+property repairs 1 durability in 100/5=20 seconds.</td>
+</tr>
+
+<tr>
+<td align=center>253</td><td align=center>5</td><td></td>
+<td>Replenishes Quantity<br>
+As in the previous property, the value of the data field is a
+frequency in terms of the number of items replenished over a period of
+100 seconds.  For example, if the value is 4, then this property
+replenishes 1 item in 100/4=25 seconds.</td>
+</tr>
+
+<tr>
+<td align=center>254</td><td align=center>8</td><td></td>
+<td>Increased Stack Size<br>
+The value is the number of additional items that can be placed on the
+stack (beyond the base limit).</td>
+</tr>
+
+<tr>
+<td rowspan=3 align=center>268<br>through<br>303</td>
+<td align=center>2</td><td rowspan=3><b><i>Note:</i></b></td>
+<td rowspan=3>This range of magic properties change value depending on
+the time of day in the game.  The format of the bit fields is the same
+in all cases.  The first 2-bit field specifies the time of day when
+the value is at its maximum:<br>
+<table align=center cellspacing=0>
+<tr><td width="5%">0</td><td width="40%">During Daytime</td><td width="10%"></td>
+<td width="5%">1</td><td width="40%">Near Dusk</td></tr>
+<tr><td>2</td><td>During Nighttime</td><td></td>
+<td>3</td><td>Near Dawn</td></tr>
+</table>
+The second and third fields are, respectively, the minimum and maximum
+values of the property.  It has the maximum value at the time
+specified, the minimum value at the opposite time, and a value halfway
+between minimum and maximum during the in-between times.<br>
+<i>A huge thanks goes to Gollen of Hungary for providing a table that
+revealed these and many other codes in this table.</i></tr>
+<tr><td align=center>10</td></tr>
+<tr><td align=center>10</td></tr>
+
+<tr>
+<td align=center>268</td><td align=center>2, 10, 10</td><td></td>
+<td>+<i>X</i> Defense (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>269</td><td align=center>2, 10, 10</td><td></td>
+<td><i>X</i>% Enhanced Defense (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>270</td><td align=center>2, 10, 10</td><td></td>
+<td>+<i>X</i> to Life (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>271</td><td align=center>2, 10, 10</td><td></td>
+<td>+<i>X</i> to Mana (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>272</td><td align=center>2, 10, 10</td><td></td>
+<td>+<i>X</i> to Damage (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>273</td><td align=center>2, 10, 10</td><td></td>
+<td><i>X</i>% Enhanced Damage (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>274</td><td align=center>2, 10, 10</td><td></td>
+<td>+<i>X</i> to Strength (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>275</td><td align=center>2, 10, 10</td><td></td>
+<td>+<i>X</i> to Dexterity (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>276</td><td align=center>2, 10, 10</td><td></td>
+<td>+<i>X</i> to Energy (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>277</td><td align=center>2, 10, 10</td><td></td>
+<td>+<i>X</i> to Vitality (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>278</td><td align=center>2, 10, 10</td><td></td>
+<td><i>X</i>% Enhanced Attack Rating (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>279</td><td align=center>2, 10, 10</td><td></td>
+<td>+<i>X</i> to Attack Rating (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>280</td><td align=center>2, 10, 10</td><td></td>
+<td>+<i>X</i> Cold Damage (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>281</td><td align=center>2, 10, 10</td><td></td>
+<td>+<i>X</i> Fire Damage (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>282</td><td align=center>2, 10, 10</td><td></td>
+<td>+<i>X</i> Lightning Damage (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>283</td><td align=center>2, 10, 10</td><td></td>
+<td>+<i>X</i> Poison Damage (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>284</td><td align=center>2, 10, 10</td><td></td>
+<td><i>X</i>% Cold Resist (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>285</td><td align=center>2, 10, 10</td><td></td>
+<td><i>X</i>% Fire Resist (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>286</td><td align=center>2, 10, 10</td><td></td>
+<td><i>X</i>% Lightning Resist (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>287</td><td align=center>2, 10, 10</td><td></td>
+<td><i>X</i>% Poison Resist (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>288</td><td align=center>2, 10, 10</td><td></td>
+<td>+<i>X</i> Cold Absorb (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>289</td><td align=center>2, 10, 10</td><td></td>
+<td>+<i>X</i> Fire Absorb (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>290</td><td align=center>2, 10, 10</td><td></td>
+<td>+<i>X</i> Lightning Absorb (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>291</td><td align=center>2, 10, 10</td><td></td>
+<td>+<i>X</i> Poison Absorb (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td></td><td align=center>2</td>
+<td rowspan=3 align=right><b><i>Note:</i></b></td>
+<td rowspan=3>All <i>by Time</i> magic properties change value depending on
+the time of day in the game.  The format of the bit fields is the same
+in all cases.  The first 2-bit field specifies the time of day when
+the value is at its maximum:<br>
+<table align=center cellspacing=0>
+<tr><td width="5%">0</td><td width="40%">During Daytime</td><td width="10%"></td>
+<td width="5%">1</td><td width="40%">Near Dusk</td></tr>
+<tr><td>2</td><td>During Nighttime</td><td></td>
+<td>3</td><td>Near Dawn</td></tr>
+</table>
+The second and third fields are, respectively, the minimum and maximum
+values of the property.  It has the maximum value at the time
+specified, the minimum value at the opposite time, and a value halfway
+between minimum and maximum during the in-between times.</tr>
+<tr><td></td><td align=center>10</td></tr>
+<tr><td></td><td align=center>10</td></tr>
+
+<tr>
+<td align=center>292</td><td align=center>2, 10, 10</td><td></td>
+<td><i>X</i>% Extra Gold from Monsters (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>293</td><td align=center>2, 10, 10</td><td></td>
+<td><i>X</i>% Better Chance of Getting Magic Items (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>294</td><td align=center>2, 10, 10</td><td></td>
+<td>Heal Stamina Plus <i>X</i>% (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>295</td><td align=center>2, 10, 10</td><td></td>
+<td>+<i>X</i> to Stamina (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>296</td><td align=center>2, 10, 10</td><td></td>
+<td><i>X</i>% Damage to Demons (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>297</td><td align=center>2, 10, 10</td><td></td>
+<td><i>X</i>% Damage to Undead (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>298</td><td align=center>2, 10, 10</td><td></td>
+<td>+<i>X</i> to Attack Rating against Demons (Increases <i>by
+time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>299</td><td align=center>2, 10, 10</td><td></td>
+<td>+<i>X</i> to Attack Rating against Undead (Increases <i>by
+time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>300</td><td align=center>2, 10, 10</td><td></td>
+<td><i>X</i>% Chance of Crushing Blow (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>301</td><td align=center>2, 10, 10</td><td></td>
+<td><i>X</i>% Chance of Open Wounds (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>302</td><td align=center>2, 10, 10</td><td></td>
+<td>+<i>X</i> Kick Damage (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>303</td><td align=center>2, 10, 10</td><td></td>
+<td><i>X</i>% Deadly Strike (Increases <i>by time</i>)</td>
+</tr>
+
+<tr>
+<td align=center>511<br>(0x1ff)</td><td align=center>0</td><td></td>
+<td>End of the (current) property list.  If this is a set item, more
+property lists may follow; otherwise the last byte of item data is
+zero-padded.</td>
+</tr>
+
+</table>
+
+<hr>
+
+<p><i>Please send any additions or corrections to me using my
+<a href="mail.html">web-based mail form</a>.</i></p>
+
+</body>
+</html>

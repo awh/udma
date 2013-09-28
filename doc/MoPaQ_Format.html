@@ -1,0 +1,763 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>MoPaQ_Format – MPQKit – Trac</title>
+
+  
+
+  
+
+  
+    
+        <link rel="search" href="http://zohar.devklog.net:47805/projects/mpqkit/search">
+        <link rel="help" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/TracGuide">
+        <link rel="alternate" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/MoPaQ_Format?format=txt" type="text/x-trac-wiki" title="Plain Text">
+        <link rel="up" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/MoPaQ_Format" title="View Latest Version">
+        <link rel="start" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki">
+        <link rel="stylesheet" href="MoPaQ_Format_files/trac.css" type="text/css"><link rel="stylesheet" href="MoPaQ_Format_files/wiki.css" type="text/css">
+        <link rel="shortcut icon" href="http://zohar.devklog.net:47805/projects/mpqkit/chrome/common/trac.ico" type="image/x-icon">
+        <link rel="icon" href="http://zohar.devklog.net:47805/projects/mpqkit/chrome/common/trac.ico" type="image/x-icon">
+      <link type="application/opensearchdescription+xml" rel="search" href="http://zohar.devklog.net:47805/projects/mpqkit/search/opensearch" title="Search MPQKit">
+    <script type="text/javascript" src="MoPaQ_Format_files/jquery.js"></script><script type="text/javascript" src="MoPaQ_Format_files/trac.js"></script><script type="text/javascript" src="MoPaQ_Format_files/search.js"></script><!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac-htdocs/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("h1,h2,h3,h4,h5,h6").addAnchor("Link to this section");
+      });
+    </script></head><body>
+    <div id="banner">
+      <div id="header">
+        <h1><a href="http://www.devklog.net/mpqkit/">MPQKit</a></h1>
+      </div>
+      <form id="search" action="/projects/mpqkit/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input id="proj-search" name="q" size="18" value="" type="text">
+          <input value="Search" type="submit">
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="http://zohar.devklog.net:47805/projects/mpqkit/login">Login</a></li><li><a href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/TracGuide">Help/Guide</a></li><li><a href="http://zohar.devklog.net:47805/projects/mpqkit/about">About Trac</a></li><li class="last"><a href="http://zohar.devklog.net:47805/projects/mpqkit/prefs">Preferences</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first active"><a href="http://zohar.devklog.net:47805/projects/mpqkit/wiki">Wiki</a></li><li><a href="http://zohar.devklog.net:47805/projects/mpqkit/timeline">Timeline</a></li><li><a href="http://zohar.devklog.net:47805/projects/mpqkit/roadmap">Roadmap</a></li><li><a href="http://zohar.devklog.net:47805/projects/mpqkit/browser">Browse Source</a></li><li><a href="http://zohar.devklog.net:47805/projects/mpqkit/report">View Tickets</a></li><li><a href="http://zohar.devklog.net:47805/projects/mpqkit/newticket">New Ticket</a></li><li class="last"><a href="http://zohar.devklog.net:47805/projects/mpqkit/search">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first"><a href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/WikiStart">Start Page</a></li><li><a href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/TitleIndex">Index</a></li><li><a href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/MoPaQ_Format?action=history">History</a></li><li class="last"><a href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/MoPaQ_Format?action=diff&amp;version=51">Last Change</a></li>
+          </ul>
+        <hr>
+      </div>
+    <div id="content" class="wiki">
+      <div class="wikipage searchable" xml:space="preserve">
+        
+          <h1 id="TheMoPaQArchiveFormat">The MoPaQ Archive Format<a title="Link to this section" href="#TheMoPaQArchiveFormat" class="anchor"> ¶</a></h1>
+<p>
+© 2006-2007 Justin Olbrantz (Quantam) and Jean-Francois Roy (BahamutZERO). All Rights Reserved.
+</p>
+<p>
+Most of this document was written by Justin Olbrantz. Most of the
+reverse engineering was done by Justin Olbrantz and others.
+Single-block compression, Burning Crusade, specifics of strong digital
+signatures and public key reverse engineering was done by Justin
+Olbrantz and Jean-Francois Roy.
+</p>
+<p>Distribution and reproduction of this specification are allowed
+without limitation, as long as it is not altered. Quotation in other
+works is freely allowed, as long as the source and author of the quote
+are stated.
+</p>
+<p>
+Wikification of this specification is currently in-progress.
+</p>
+<p>
+</p><div class="wiki-toc"><ol><li><a href="#TheMoPaQArchiveFormat">The MoPaQ Archive Format</a><ol><li><a href="#a1.IntroductiontotheMoPaQFormat">1. Introduction to the MoPaQ Format</a></li><li>
+<a href="#a2.TheMoPaQFormat">2. The MoPaQ Format</a><ol><li><a href="#a2.1GeneralArchiveLayout">2.1 General Archive Layout</a></li><li>
+<a href="#a2.2ArchiveHeader">2.2 Archive Header</a></li><li>
+<a href="#a2.3BlockTable">2.3 Block Table</a></li><li>
+<a href="#a2.4ExtendedBlockTable">2.4 Extended Block Table</a></li><li>
+<a href="#a2.5HashTable">2.5 Hash Table</a></li><li>
+<a href="#a2.6FileData">2.6 File Data</a></li><li>
+<a href="#a2.7Listfile">2.7 Listfile</a></li><li>
+<a href="#a2.8ExtendedAttributes">2.8 Extended Attributes</a></li><li>
+<a href="#a2.9WeakDigitalSignature">2.9 Weak Digital Signature</a></li><li>
+<a href="#a2.10StrongDigitalSignature-Generics">2.10 Strong Digital Signature - Generics</a></li><li>
+<a href="#a2.11StrongDigitalSignature-Specifics">2.11 Strong Digital Signature - Specifics</a></li></ol></li><li><a href="#a3.AlgorithmSourceCode">3. Algorithm Source Code</a><ol><li><a href="#a3.1EncryptionDecryption">3.1 Encryption/Decryption</a></li><li>
+<a href="#a3.2HashingAndFileKeyComputation">3.2 Hashing And File Key Computation</a></li><li>
+<a href="#a3.3FindingFiles">3.3 Finding Files</a></li><li>
+<a href="#a3.4DeletingFiles">3.4 Deleting Files</a></li><li>
+<a href="#a3.5ConversionofFILETIMEAndtime_t">3.5 Conversion of FILETIME And time_t</a></li><li>
+<a href="#a3.6ConversionofFILETIMEAndNSDate">3.6 Conversion of FILETIME And NSDate</a></li><li>
+<a href="#a3.7Forminga64-BitLargeArchiveOffsetFrom32-BitAnd16-BitComponents">3.7 Forming a 64-Bit Large Archive Offset From 32-Bit And 16-Bit  …</a></li></ol></li><li><a href="#a4.Constants">4. Constants</a><ol><li><a href="#a4.1Locales">4.1 Locales</a></li></ol></li><li><a href="#a5.RevisionHistory">5. Revision History</a></li></ol></li></ol></div><p>
+</p>
+<h2 id="a1.IntroductiontotheMoPaQFormat">1. Introduction to the MoPaQ Format<a title="Link to this section" href="#a1.IntroductiontotheMoPaQFormat" class="anchor"> ¶</a></h2>
+<p>The MoPaQ (or MPQ) format is an archive file format designed by Mike
+O'Brien (hence the name Mike O'brien PaCK) at Blizzard Entertainment.
+The format has been used in all Blizzard games since (and including)
+Diablo. It is heavily optimized to be a read-only game archive format,
+and excels at this role. </p>
+<p>
+The Blizzard MoPaQ-reading functions are contained in the Storm module,
+which my be either statically or dynamically linked. The Blizzard
+MoPaQ-writing functions are contained in the MPQAPI module, which is
+always statically linked.
+</p>
+<p>
+<a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/StormLib" rel="nofollow">StormLib?</a>
+- mentioned several times in this specification - is an open-source
+MoPaQ reading and writing library written by Ladislav Zezula (no
+affiliation with Blizzard Entertainment). While it's a bit dated, and
+does not support all of the newer MoPaQ features, it contains source
+code to the more exotic compression methods used by MoPaQ, such as the
+PKWare implode algorithm, MoPaQ's huffman compression algorithm, and
+the IMA ADPCM compression used by MoPaQ.
+</p>
+<h2 id="a2.TheMoPaQFormat">2. The MoPaQ Format<a title="Link to this section" href="#a2.TheMoPaQFormat" class="anchor"> ¶</a></h2>
+<p>All numbers in the MoPaQ format are in little endian byte order;
+signed numbers use the two's complement system. Data types are listed
+either as int (integer, the number of bits specified), byte (8 bits),
+or char (bytes which contain ASCII characters). All sizes and offsets
+are in bytes, unless specified otherwise. Structure members are listed
+in the following general form:
+offset from the beginning of the structure: data type(array size)
+member name : member description
+</p>
+<h3 id="a2.1GeneralArchiveLayout">2.1 General Archive Layout<a title="Link to this section" href="#a2.1GeneralArchiveLayout" class="anchor"> ¶</a></h3>
+<p>
+- Archive Header
+- File Data
+- File Data - Special Files
+- Hash Table
+- Block Table
+- Extended Block Table
+- Strong Digital signature
+</p>
+<p>This is the usual archive format, but it is not mandatory. Some
+archives have been observed placing the hash table and file table after
+the archive header, and before the file data.
+</p>
+<h3 id="a2.2ArchiveHeader">2.2 Archive Header<a title="Link to this section" href="#a2.2ArchiveHeader" class="anchor"> ¶</a></h3>
+<pre class="wiki">00h: char(4) Magic : Indicates that the file is a MoPaQ archive. Must be ASCII "MPQ" 1Ah.
+04h: int32 HeaderSize : Size of the archive header.
+08h: int32 ArchiveSize : Size of the whole archive, including the header. Does not include the strong digital signature, if present. This size is used, among other things, for determining the region to hash in computing the digital signature. This field is deprecated in the Burning Crusade MoPaQ format, and the size of the archive is calculated as the size from the beginning of the archive to the end of the hash table, block table, or extended block table (whichever is largest).
+0Ch: int16 FormatVersion : MoPaQ format version. MPQAPI will not open archives where this is negative. Known versions:
+	0000h: Original format. HeaderSize should be 20h, and large archives are not supported.
+	0001h: Burning Crusade format. Header size should be 2Ch, and large archives are supported.
+0Eh: int8 SectorSizeShift : Power of two exponent specifying the number of 512-byte disk sectors in each logical sector in the archive. The size of each logical sector in the archive is 512 * 2^SectorSizeShift. Bugs in the Storm library dictate that this should always be 3 (4096 byte sectors).
+10h: int32 HashTableOffset : Offset to the beginning of the hash table, relative to the beginning of the archive.
+14h: int32 BlockTableOffset : Offset to the beginning of the block table, relative to the beginning of the archive.
+18h: int32 HashTableEntries : Number of entries in the hash table. Must be a power of two, and must be less than 2^16 for the original MoPaQ format, or less than 2^20 for the Burning Crusade format.
+1Ch: int32 BlockTableEntries : Number of entries in the block table.
+Fields only present in the Burning Crusade format and later:
+20h: int64 ExtendedBlockTableOffset : Offset to the beginning of the extended block table, relative to the beginning of the archive.
+28h: int16 HashTableOffsetHigh : High 16 bits of the hash table offset for large archives.
+2Ah: int16 BlockTableOffsetHigh : High 16 bits of the block table offset for large archives.
+</pre><p>The archive header is the first structure in the archive, at
+archive offset 0; however, the archive does not need to be at offset 0
+of the containing file. The offset of the archive in the file is
+referred to here as <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/ArchiveOffset" rel="nofollow">ArchiveOffset?</a>.
+If the archive is not at the beginning of the file, it must begin at a
+disk sector boundary (512 bytes). Early versions of Storm require that
+the archive be at the end of the containing file (<a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/ArchiveOffset" rel="nofollow">ArchiveOffset?</a> + <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/ArchiveSize" rel="nofollow">ArchiveSize?</a>
+= file size), but this is not required in newer versions (due to the
+strong digital signature not being considered a part of the archive).
+</p>
+<h3 id="a2.3BlockTable">2.3 Block Table<a title="Link to this section" href="#a2.3BlockTable" class="anchor"> ¶</a></h3>
+<p>The block table contains entries for each region in the archive.
+Regions may be either files, empty space, which may be overwritten by
+new files (typically this space is from deleted file data), or unused
+block table entries. Empty space entries should have <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/BlockOffset" rel="nofollow">BlockOffset?</a> and <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/BlockSize" rel="nofollow">BlockSize?</a> nonzero, and <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/FileSize" rel="nofollow">FileSize?</a> and Flags zero; unused block table entries should have <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/BlockSize" rel="nofollow">BlockSize?</a>, <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/FileSize" rel="nofollow">FileSize?</a>,
+and Flags zero. The block table is encrypted, using the hash of "(block
+table)" as the key. Each entry is structured as follows:
+</p>
+<pre class="wiki">00h: int32 BlockOffset : Offset of the beginning of the block, relative to the beginning of the archive.
+04h: int32 BlockSize : Size of the block in the archive.
+08h: int32 FileSize : Size of the file data stored in the block. Only valid if the block is a file; otherwise meaningless, and should be 0. If the file is compressed, this is the size of the uncompressed file data.
+0Ch: int32 Flags : Bit mask of the flags for the block. The following values are conclusively identified:
+	80000000h: Block is a file, and follows the file data format; otherwise, block is free space or unused. If the block is not a file, all other flags should be cleared, and FileSize should be 0.
+	01000000h: File is stored as a single unit, rather than split into sectors.
+	00020000h: The file's encryption key is adjusted by the block offset and file size (explained in detail in the File Data section). File must be encrypted.
+	00010000h: File is encrypted.
+	00000200h: File is compressed. File cannot be imploded.
+	00000100h: File is imploded. File cannot be compressed.
+</pre><h3 id="a2.4ExtendedBlockTable">2.4 Extended Block Table<a title="Link to this section" href="#a2.4ExtendedBlockTable" class="anchor"> ¶</a></h3>
+<p>
+The extended block table was added to support archives larger than 4 gigabytes (2<sup>32</sup>
+bytes). The table contains the upper bits of the archive offsets for
+each block in the block table. It is simply an array of int16s, which
+become bits 32-47 of the archive offsets for each block, with bits
+48-63 being zero. Individual blocks in the archive are still limited to
+4 gigabytes in size. This table is only present in Burning Crusade
+format archives that exceed 4 gigabytes size.
+</p>
+<p>
+As of the Burning Crusade Friends and Family beta, this table is not encrypted.
+</p>
+<h3 id="a2.5HashTable">2.5 Hash Table<a title="Link to this section" href="#a2.5HashTable" class="anchor"> ¶</a></h3>
+<p>
+Instead of storing file names, for quick access <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/MoPaQs" rel="nofollow">MoPaQs?</a>
+use a fixed, power of two-size hash table of files in the archive. A
+file is uniquely identified by its file path, its language, and its
+platform. The home entry for a file in the hash table is computed as a
+hash of the file path. In the event of a collision (the home entry is
+occupied by another file), progressive overflow is used, and the file
+is placed in the next available hash table entry. Searches for a
+desired file in the hash table proceed from the home entry for the file
+until either the file is found, the entire hash table is searched, or
+an empty hash table entry (<a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/FileBlockIndex" rel="nofollow">FileBlockIndex?</a>
+of FFFFFFFFh) is encountered. The hash table is encrypted using the
+hash of "(hash table)" as the key. Each entry is structured as follows:
+</p>
+<pre class="wiki">00h: int32 FilePathHashA : The hash of the file path, using method A.
+04h: int32 FilePathHashB : The hash of the file path, using method B.
+08h: int16 Language : The language of the file. This is a Windows LANGID data type, and uses the same values. 0 indicates the default language (American English), or that the file is language-neutral.
+0Ah: int8 Platform : The platform the file is used for. 0 indicates the default platform. No other values have been observed.
+0Ch: int32 FileBlockIndex : If the hash table entry is valid, this is the index into the block table of the file. Otherwise, one of the following two values:
+	FFFFFFFFh: Hash table entry is empty, and has always been empty. Terminates searches for a given file.
+	FFFFFFFEh: Hash table entry is empty, but was valid at some point (in other words, the file was deleted). Does not terminate searches for a given file.
+</pre><h3 id="a2.6FileData">2.6 File Data<a title="Link to this section" href="#a2.6FileData" class="anchor"> ¶</a></h3>
+<p>
+The data for each file is composed of the following structure:
+</p>
+<pre class="wiki">00h: int32(SectorsInFile + 1) SectorOffsetTable : Offsets to the start of each sector, relative to the beginning of the file data. The last entry contains the file size, making it possible to easily calculate the size of any given sector. This table is not present if this information can be calculated (see details below).
+immediately following SectorOffsetTable: SECTOR Sectors(SectorsInFile) : Data of each sector in the file, packed end to end (see details below).
+</pre><p>Normally, file data is split up into sectors, for simple
+streaming. All sectors, save for the last, will contain as many bytes
+of file data as specified in the archive header's <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/SectorSizeShift" rel="nofollow">SectorSizeShift?</a>;
+the last sector may contain less than this, depending on the size of
+the entire file's data. If the file is compressed or imploded, the
+sector will be smaller or the same size as the file data it contains.
+Individual sectors in a compressed or imploded file may be stored
+uncompressed; this occurs if and only if the file data the sector
+contains could not be compressed by the algorithm(s) used (if the
+compressed sector size was greater than or equal to the size of the
+file data), and is indicated by the sector's size in <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/SectorOffsetTable" rel="nofollow">SectorOffsetTable?</a> being equal to the size of the file data in the sector (which may be calculated from the <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/FileSize" rel="nofollow">FileSize?</a>). 
+</p>
+<p>
+The format of each sector depends on the kind of sector it is.
+Uncompressed sectors are simply the the raw file data contained in the
+sector. Imploded sectors are the raw compressed data following
+compression with the implode algorithm (these sectors can only be in
+imploded files). Compressed sectors (only found in compressed - not
+imploded - files) are compressed with one or more compression
+algorithms, and have the following structure:
+</p>
+<pre class="wiki">00h: byte CompressionMask : Mask of the compression types applied to this sector.
+01h: byte(SectorSize - 1) SectorData : The compressed data for the sector.
+</pre><p>If multiple compression types are used, they are applied in
+the order listed below, and decompression is performed in the opposite
+order. This byte counts towards the total sector size, meaning that the
+sector will be stored uncompressed if the data cannot be compressed by
+at least two bytes; as well, this byte is encrypted with the sector
+data, if applicable. The following compression types are defined (for
+implementations of these algorithms, see <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/StormLib" rel="nofollow">StormLib?</a>):
+</p>
+<pre class="wiki">40h: IMA ADPCM mono
+80h: IMA ADPCM stereo
+01h: Huffman encoded
+02h: Deflated (see ZLib)
+08h: Imploded (see PKWare Data Compression Library)
+10h: BZip2 compressed (see BZip2)
+</pre><p>
+If the file is stored as a single unit (indicated in the file's Flags),
+there is effectively only a single sector, which contains the entire
+file data.
+</p>
+<p>If the file is encrypted, each sector (after compression/implosion,
+if applicable) is encrypted with the file's key. The base key for a
+file is determined by a hash of the file name stripped of the directory
+(i.e. the key for a file named "directory\file" would be computed as
+the hash of "file"). If this key is adjusted, as indicated in the
+file's Flags, the final key is calculated as ((base key + <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/BlockOffset" rel="nofollow">BlockOffset?</a>) XOR <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/FileSize" rel="nofollow">FileSize?</a>) (<a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/StormLib" rel="nofollow">StormLib?</a>
+incorrectly uses an AND in place of the XOR). Each sector is encrypted
+using the key + the 0-based index of the sector in the file. The <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/SectorOffsetTable" rel="nofollow">SectorOffsetTable?</a>, if present, is encrypted using the key - 1.
+</p>
+<p>
+The <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/SectorOffsetTable" rel="nofollow">SectorOffsetTable?</a> is omitted when the sizes and offsets of all sectors in the file are calculatable from the <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/FileSize" rel="nofollow">FileSize?</a>.
+This can happen in several circumstances. If the file is not
+compressed/imploded, then the size and offset of all sectors is known,
+based on the archive's <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/SectorSizeShift" rel="nofollow">SectorSizeShift?</a>. If the file is stored as a single unit compressed/imploded, then the <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/SectorOffsetTable" rel="nofollow">SectorOffsetTable?</a> is omitted, as the single file "sector" corresponds to <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/BlockSize" rel="nofollow">BlockSize?</a> and <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/FileSize" rel="nofollow">FileSize?</a>, as mentioned previously. However, the <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/SectorOffsetTable" rel="nofollow">SectorOffsetTable?</a>
+will be present if the file is compressed/imploded and the file is not
+stored as a single unit, even if there is only a single sector in the
+file (the size of the file is less than or equal to the archive's
+sector size).
+</p>
+<h3 id="a2.7Listfile">2.7 Listfile<a title="Link to this section" href="#a2.7Listfile" class="anchor"> ¶</a></h3>
+<p>The listfile is a very simple extension to the MoPaQ format that
+contains the file paths of (most) files in the archive. The languages
+and platforms of the files are not stored in the listfile. The listfile
+is contained in the file "(listfile)" (default language and platform),
+and is simply a text file with file paths separated by ';', 0Dh, 0Ah,
+or some combination of these. The file "(listfile)" may not be listed
+in the listfile.
+</p>
+<h3 id="a2.8ExtendedAttributes">2.8 Extended Attributes<a title="Link to this section" href="#a2.8ExtendedAttributes" class="anchor"> ¶</a></h3>
+<p>The extended attributes are optional file attributes for files in
+the block table. These attributes were added at times after the MoPaQ
+format was already finalized, and it is not necessary for every archive
+to have all (or any) of the extended attributes. If an archive contains
+a given attribute, there will be an instance of that attribute for
+every block in the block table, although the attribute will be
+meaningless if the block is not a file. The order of the attributes for
+blocks correspond to the order of the blocks in the block table, and
+are of the same number. The attributes are stored in parallel arrays in
+the "(attributes)" file (default language and platform), in the
+archive. The attributes corresponding to this file need not be valid
+(and logically cannot be). Unlike all the other structures in the MoPaQ
+format, entries in the extended attributes are NOT guaranteed to be
+aligned. Also note that in some archives, malicious zeroing of the
+attributes has been observed, perhaps with the intent of breaking
+archive viewers. This file is structured as follows:
+</p>
+<pre class="wiki">00h: int32 Version : Specifies the extended attributes format version. For now, must be 100.
+04h: int32 AttributesPresent : Bit mask of the extended attributes present in the archive:
+	00000001h: File CRC32s.
+	00000002h: File timestamps.
+	00000004h: File MD5s.
+08h: int32(BlockTableEntries) CRC32s : CRC32s of the (uncompressed) file data for each block in the archive. Omitted if the archive does not have CRC32s.
+immediately after CRC32s: FILETIME(BlockTableEntries) Timestamps : Timestamps for each block in the archive. The format is that of the Windows FILETIME structure. Omitted if the archive does not have timestamps.
+immediately after Timestamps: MD5(BlockTableEntries) MD5s : MD5s of the (uncompressed) file data for each block in the archive. Omitted if the archive does not have MD5s.
+</pre><h3 id="a2.9WeakDigitalSignature">2.9 Weak Digital Signature<a title="Link to this section" href="#a2.9WeakDigitalSignature" class="anchor"> ¶</a></h3>
+<p>The weak digital signature is a RSASSA-PKCS1-v1_5 digital signature,
+using the MD5 hashing algorithm and a 512-bit (weak) RSA key (for more
+information about this protocol, see the RSA Labs PKCS1 specification).
+The public key and exponent are stored in a resource in Storm, the
+private key is stored in a separate file, whose filename is passed to
+MPQAPI (the private key is not stored in MPQAPI). The signature is
+stored uncompressed, unencrypted in the file "(signature)" (default
+language and platform) in the archive. The archive is hashed from the
+beginning of the archive (<a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/ArchiveOffset" rel="nofollow">ArchiveOffset?</a> in the containing file) to the end of the archive (the length indicated by <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/ArchiveSize" rel="nofollow">ArchiveSize?</a>,
+or calculated in the Extended MoPaQ format); the signature file is
+added to the archive before signing, and the space occupied by the file
+is considered to be all binary 0s during signing/verification. This
+file is structured as follows:
+</p>
+<pre class="wiki">00h: int32 Unknown : Must be 0.
+04h: int32 Unknown : Must be 0.
+08h: int512 Signature : The digital signature. Like all other numbers in the MoPaQ format, this is stored in little-endian order.
+</pre><p>The structure of the signature, when decrypted, follows the
+RSASSA-PKCS1-v1_5 specification; this format is rather icky to work
+with (Quantam wrote a program to verify this signature using nothing
+but an MD5 function and huge integer functions; it wasn't pleasant),
+and best left to an encryption library, such as OpenSSL as shown below
+(see <a class="source" href="http://zohar.devklog.net:47805/projects/mpqkit/browser/MPQCryptography.c">MPQCryptography.c</a>):
+</p>
+<pre class="wiki">int mpq_verify_weak_signature(RSA *public_key, const unsigned char *signature, const unsigned char *digest) {
+    unsigned char reversed_signature[MPQ_WEAK_SIGNATURE_SIZE];
+    memcpy(reversed_signature, signature + 8, MPQ_WEAK_SIGNATURE_SIZE);
+    memrev(reversed_signature, MPQ_WEAK_SIGNATURE_SIZE);
+    
+    return RSA_verify(NID_md5, digest, MD5_DIGEST_LENGTH, reversed_signature, MPQ_WEAK_SIGNATURE_SIZE, public_key);
+}
+</pre><p>
+MPQKit includes the weak signature public RSA key in PEM format since <a class="changeset" href="http://zohar.devklog.net:47805/projects/mpqkit/changeset/73" title="- Known Blizzard public RSA keys in OpenSSL-compatible PEM format.
+-  ...">r73</a>.
+</p>
+<h3 id="a2.10StrongDigitalSignature-Generics">2.10 Strong Digital Signature - Generics<a title="Link to this section" href="#a2.10StrongDigitalSignature-Generics" class="anchor"> ¶</a></h3>
+<p>
+The strong digital signature consists of a SHA-1 digest with extremely
+simple padding, encrypted using straight RSA encryption. All known
+Blizzard keys are 2048-bit (strong) RSA keys; a default key is stored
+in Storm. Obviously, any RSA key may be used; in fact, an archive
+signed with the default key has never been seen in the wild. The strong
+digital signature is stored immediately after the archive, in the
+containing file. The entire archive (<a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/ArchiveSize" rel="nofollow">ArchiveSize?</a> bytes, starting at <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/ArchiveOffset" rel="nofollow">ArchiveOffset?</a>
+in the containing file) is hashed as a single block (there is one known
+exception to that algorithm, see below). In addition, a signature tail
+may be appended to the SHA-1 digest before it is finalized; this can be
+any arbitrary blob of data. The signature has the following format:
+</p>
+<pre class="wiki">00h: char(4) Magic : Indicates the presence of a digital signature. Must be "NGIS" ("SIGN" backwards).
+04h: int2048 Signature : The digital signature, stored in little-endian format.
+</pre><p>When the Signature field is decrypted with the public key, and
+the resulting large integer is stored in little-endian order, it is
+structured as follows:
+</p>
+<pre class="wiki">00h: byte Padding : Must be 0Bh.
+01h: byte(235) Padding : Must be BBh.
+ECh: byte(20) SHA-1 : SHA-1 digest of the archive, in standard SHA-1 byte order.
+</pre><h3 id="a2.11StrongDigitalSignature-Specifics">2.11 Strong Digital Signature - Specifics<a title="Link to this section" href="#a2.11StrongDigitalSignature-Specifics" class="anchor"> ¶</a></h3>
+<p>This section aims at giving specific information about the usage of
+the various known Blizzard public keys, as well as known SHA-1 digest
+tails.
+</p>
+<p>
+<i>Warcraft 3 maps</i>
+</p>
+<p>Warcraft 3 maps (.w3m and .w3x) are composed of a map header,
+followed by an MPQ archive at offset 512, followed by a strong digital
+signature. The <a class="source" href="http://zohar.devklog.net:47805/projects/mpqkit/browser/Public%2520RSA%2520Keys/Warcraft%25203%2520Map.pem">Warcraft 3 Map</a>
+key is used for Warcraft 3 map signatures; the SHA-1 digest is
+constructed from the content of the entire file, including the map
+header, up to the end of the archive. That is, (<a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/MapHeaderSize" rel="nofollow">MapHeaderSize?</a> + <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/ArchiveSize" rel="nofollow">ArchiveSize?</a>
+bytes, starting at 0 in the containing file). Once the map file has
+been digested, a tail is appended to the SHA-1 digest; the tail is the
+uppercased file name of the map.
+</p>
+<p>
+<i>World of Warcraft Macintosh patches</i>
+</p>
+<p>World of Warcraft Macintosh patches are embodied by a patch program
+("patcher"), which contains in its bundle resources a standalone. MPQ
+archive, which stores the patch's content. standalone.MPQ archives are
+signed with the <a class="source" href="http://zohar.devklog.net:47805/projects/mpqkit/browser/Public%2520RSA%2520Keys/World%2520of%2520Warcraft%2520Macintosh%2520Patch.pem">World of Warcraft Macintosh Patch</a>
+key; the SHA-1 digest is constructed normally as described in section
+2.10. Once the archive has been digested, a tail is appended to the
+SHA-1 digest; the tail is "ARCHIVE".
+</p>
+<p>
+It should be noted that World of Warcraft Windows patches are signed using the weak signature scheme.
+</p>
+<p>
+<i>World of Warcraft survey</i>
+</p>
+<p>
+World of Warcraft stores a Survey.MPQ archive in its WDB directory. Survey.MPQ archives are signed with the <a class="source" href="http://zohar.devklog.net:47805/projects/mpqkit/browser/Public%2520RSA%2520Keys/World%2520of%2520Warcraft%2520Survey.pem">World of Warcraft Survey</a>
+key; the SHA-1 digest is constructed normally as described in section
+2.10. Once the archive has been digested, a tail is appended to the
+SHA-1 digest; the tail is "ARCHIVE".
+</p>
+<p>
+It should be noted that the Survey.MPQ archive has not yet been observed in publicly available builds of Burning Crusade.
+</p>
+<h2 id="a3.AlgorithmSourceCode">3. Algorithm Source Code<a title="Link to this section" href="#a3.AlgorithmSourceCode" class="anchor"> ¶</a></h2>
+<p>All of the sample code here assumes little endian machine byte
+order, that the short type is 16 bits, that the long type is 32 bits,
+and that the long long type is 64 bits. Adjustments must be made if
+these assumptions are not correct on a given platform. All code not
+credited otherwise was written by myself in the writing of this
+specification.
+</p>
+<h3 id="a3.1EncryptionDecryption">3.1 Encryption/Decryption<a title="Link to this section" href="#a3.1EncryptionDecryption" class="anchor"> ¶</a></h3>
+<p>
+Based on code from <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/StormLib" rel="nofollow">StormLib?</a>.
+</p>
+<pre class="wiki">unsigned long dwCryptTable[0x500];
+
+// The encryption and hashing functions use a number table in their procedures. This table must be initialized before the functions are called the first time.
+void InitializeCryptTable()
+{
+    unsigned long seed   = 0x00100001;
+    unsigned long index1 = 0;
+    unsigned long index2 = 0;
+    int   i;
+
+    for (index1 = 0; index1 &lt; 0x100; index1++)
+    {
+        for (index2 = index1, i = 0; i &lt; 5; i++, index2 += 0x100)
+        {
+            unsigned long temp1, temp2;
+
+            seed  = (seed * 125 + 3) % 0x2AAAAB;
+            temp1 = (seed &amp; 0xFFFF) &lt;&lt; 0x10;
+
+            seed  = (seed * 125 + 3) % 0x2AAAAB;
+            temp2 = (seed &amp; 0xFFFF);
+
+            dwCryptTable[index2] = (temp1 | temp2);
+        }
+    }
+}
+
+void EncryptData(void *lpbyBuffer, unsigned long dwLength, unsigned long dwKey)
+{
+    assert(lpbyBuffer);
+
+    unsigned long *lpdwBuffer = (unsigned long *)lpbyBuffer;
+    unsigned long seed = 0xEEEEEEEE;
+    unsigned long ch;
+
+    dwLength /= sizeof(unsigned long);
+
+    while(dwLength-- &gt; 0)
+    {
+        seed += dwCryptTable[0x400 + (dwKey &amp; 0xFF)];
+        ch = *lpdwBuffer ^ (dwKey + seed);
+
+        dwKey = ((~dwKey &lt;&lt; 0x15) + 0x11111111) | (dwKey &gt;&gt; 0x0B);
+        seed = *lpdwBuffer + seed + (seed &lt;&lt; 5) + 3;
+
+		*lpdwBuffer++ = ch;
+    }
+}
+
+void DecryptData(void *lpbyBuffer, unsigned long dwLength, unsigned long dwKey)
+{
+    assert(lpbyBuffer);
+
+    unsigned long *lpdwBuffer = (unsigned long *)lpbyBuffer;
+    unsigned long seed = 0xEEEEEEEEL;
+    unsigned long ch;
+
+    dwLength /= sizeof(unsigned long);
+
+    while(dwLength-- &gt; 0)
+    {
+        seed += dwCryptTable[0x400 + (dwKey &amp; 0xFF)];
+        ch = *lpdwBuffer ^ (dwKey + seed);
+
+        dwKey = ((~dwKey &lt;&lt; 0x15) + 0x11111111L) | (dwKey &gt;&gt; 0x0B);
+        seed = ch + seed + (seed &lt;&lt; 5) + 3;
+
+		*lpdwBuffer++ = ch;
+    }
+}
+</pre><h3 id="a3.2HashingAndFileKeyComputation">3.2 Hashing And File Key Computation<a title="Link to this section" href="#a3.2HashingAndFileKeyComputation" class="anchor"> ¶</a></h3>
+<p>
+These functions may have been derived from <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/StormLib" rel="nofollow">StormLib?</a> code at some point in the very distant past. It was so long ago that I don't remember for certain.
+</p>
+<pre class="wiki">// Different types of hashes to make with HashString
+#define MPQ_HASH_TABLE_OFFSET	0
+#define MPQ_HASH_NAME_A	1
+#define MPQ_HASH_NAME_B	2
+#define MPQ_HASH_FILE_KEY	3
+
+// Based on code from StormLib.
+unsigned long HashString(const char *lpszString, unsigned long dwHashType)
+{
+    assert(lpszString);
+    assert(dwHashType &lt;= MPQ_HASH_FILE_KEY);
+    
+    unsigned long  seed1 = 0x7FED7FEDL;
+    unsigned long  seed2 = 0xEEEEEEEEL;
+    int    ch;
+
+    while (*lpszString != 0)
+    {
+        ch = toupper(*lpszString++);
+
+        seed1 = dwCryptTable[(dwHashType * 0x100) + ch] ^ (seed1 + seed2);
+        seed2 = ch + seed1 + seed2 + (seed2 &lt;&lt; 5) + 3;
+    }
+    return seed1;
+}
+
+#define BLOCK_OFFSET_ADJUSTED_KEY 0x00020000L
+
+unsigned long ComputeFileKey(const char *lpszFilePath, const BlockTableEntry &amp;blockEntry, unsigned long nArchiveOffset)
+{
+	assert(lpszFilePath);
+	
+	// Find the file name part of the path
+	const char *lpszFileName = strrchr(lpszFilePath, '\\');
+	if (lpszFileName)
+		lpszFileName++;	// Skip the \
+	else
+		lpszFileName = lpszFilePath;
+		
+	// Hash the name to get the base key
+	unsigned long nFileKey = HashString(lpszFileName, MPQ_HASH_FILE_KEY);
+	
+	// Offset-adjust the key if necessary
+	if (blockEntry.Flags &amp; BLOCK_OFFSET_ADJUSTED_KEY)
+		nFileKey = (nFileKey + blockEntry.BlockOffset) ^ blockEntry.FileSize;
+		
+	return nFileKey;
+}
+</pre><h3 id="a3.3FindingFiles">3.3 Finding Files<a title="Link to this section" href="#a3.3FindingFiles" class="anchor"> ¶</a></h3>
+<pre class="wiki">#define MPQ_HASH_ENTRY_EMPTY 0xFFFFFFFFL
+#define MPQ_HASH_ENTRY_DELETED 0xFFFFFFFEL
+
+bool FindFileInHashTable(const HashTableEntry *lpHashTable, unsigned long nHashTableSize, const char *lpszFilePath, unsigned short nLang, unsigned char nPlatform, unsigned long &amp;iFileHashEntry)
+{
+	assert(lpHashTable);
+	assert(nHashTableSize);
+	assert(lpszFilePath);
+	
+	// Find the home entry in the hash table for the file
+	unsigned long iInitEntry = HashString(lpszFilePath, MPQ_HASH_TABLE_OFFSET) &amp; (nHashTableSize - 1);
+		
+	// Is there anything there at all?
+	if (lpHashTable[iInitEntry].FileBlockIndex == MPQ_HASH_ENTRY_EMPTY)
+		return false;
+		
+	// Compute the hashes to compare the hash table entry against
+	unsigned long nNameHashA = HashString(lpszFilePath, MPQ_HASH_NAME_A),
+		nNameHashB = HashString(lpszFilePath, MPQ_HASH_NAME_B),
+		iCurEntry = iInitEntry;
+		
+	// Check each entry in the hash table till a termination point is reached
+	do
+	{
+		if (lpHashTable[iCurEntry].FileBlockIndex != MPQ_HASH_ENTRY_DELETED)
+		{
+			if (lpHashTable[iCurEntry].FilePathHashA == nNameHashA 
+				&amp;&amp; lpHashTable[iCurEntry].FilePathHashB == nNameHashB
+				&amp;&amp; lpHashTable[iCurEntry].Language == nLang
+				&amp;&amp; lpHashTable[iCurEntry].Platform == nPlatform)
+			{
+				iFileHashEntry = iCurEntry;
+				
+				return true;
+			}
+		}
+			
+		iCurEntry = (iCurEntry + 1) &amp; (nHashTableSize - 1);
+	} while (iCurEntry != iInitEntry &amp;&amp; lpHashTable[iCurEntry].FileBlockIndex != MPQ_HASH_ENTRY_EMPTY);
+	
+	return false;
+}
+</pre><h3 id="a3.4DeletingFiles">3.4 Deleting Files<a title="Link to this section" href="#a3.4DeletingFiles" class="anchor"> ¶</a></h3>
+<pre class="wiki">bool DeleteFile(HashTableEntry *lpHashTable, unsigned long nHashTableSize, BlockTableEntry *lpBlockTable, const char *lpszFilePath, unsigned short nLang, unsigned char nPlatform)
+{
+	assert(lpHashTable);
+	assert(nHashTableSize);
+	assert(lpBlockTable);
+	
+	// Find the file in the hash table
+	unsigned long iFileHashEntry;
+	
+	if (!FindFileInHashTable(lpHashTable, nHashTableSize, lpszFilePath, nLang, nPlatform, iFileHashEntry))
+		return false;
+	
+	// Get the block table index before we nuke the hash table entry
+	unsigned long iFileBlockEntry = lpHashTable[iFileHashEntry].FileBlockIndex;
+	
+	// Delete the file's entry in the hash table
+	memset(&amp;lpHashTable[iFileHashEntry], 0xFF, sizeof(HashTableEntry));
+	
+	// If the next entry is empty, mark this one as empty; otherwise, mark this as deleted.
+	if (lpHashTable[(iFileHashEntry + 1) &amp; (nHashTableSize - 1)].FileBlockIndex == MPQ_HASH_ENTRY_EMPTY)
+		lpHashTable[iFileHashEntry].FileBlockIndex = MPQ_HASH_ENTRY_EMPTY;
+	else
+		lpHashTable[iFileHashEntry].FileBlockIndex = MPQ_HASH_ENTRY_DELETED;
+	
+	// If the block occupies space, mark the block as free space; otherwise, clear the block table entry.
+	if (lpBlockTable[iFileBlockEntry].BlockSize &gt; 0)
+	{
+		lpBlockTable[iFileBlockEntry].FileSize = 0;
+		lpBlockTable[iFileBlockEntry].Flags = 0;
+	}
+	else
+		memset(&amp;lpBlockTable[iFileBlockEntry], 0, sizeof(BlockTableEntry);
+		
+	return true;
+}
+</pre><h3 id="a3.5ConversionofFILETIMEAndtime_t">3.5 Conversion of FILETIME And time_t<a title="Link to this section" href="#a3.5ConversionofFILETIMEAndtime_t" class="anchor"> ¶</a></h3>
+<p>This code assumes that the base ("zero") date for time_t is
+01/01/1970. This is true on Windows, Unix System V systems, and Mac OS
+X. It is unknown whether this is true on all other platforms. You'll
+need to research this yourself, if you plan on porting it somewhere
+else.
+</p>
+<p>
+<strong>THIS CODE MAY BE INCORRECT, AND HAS NOT BEEN TESTED</strong>
+</p>
+<pre class="wiki">#define EPOCH_OFFSET 116444736000000000ULL	// Number of 100 ns units between 01/01/1601 and 01/01/1970
+
+bool GetTimeFromFileTime(const FILETIME &amp;fileTime, time_t &amp;time)
+{
+	// The FILETIME represents a 64-bit integer: the number of 100 ns units since January 1, 1601
+	unsigned long long nTime = ((unsigned long long)fileTime.dwHighDateTime &lt;&lt; 32) + fileTime.dwLowDateTime;
+
+	if (nTime &lt; EPOCH_OFFSET)
+		return false;
+
+	nTime -= EPOCH_OFFSET;	// Convert the time base from 01/01/1601 to 01/01/1970
+	nTime /= 10000000ULL;	// Convert 100 ns to sec
+
+	time = (time_t)nTime;
+
+	// Test for overflow (FILETIME is 64 bits, time_t is 32 bits)
+	if ((nTime - (unsigned long long)time) &gt; 0)
+		return false;
+
+	return true;
+}
+
+void GetFileTimeFromTime(const time_t &amp;time, FILETIME &amp;fileTime)
+{
+	unsigned long long nTime = (unsigned long long)time;
+
+	nTime *= 10000000ULL;
+	nTime += EPOCH_OFFSET;
+
+	fileTime.dwLowDateTime = (DWORD)nTime;
+	fileTime.dwHighDateTime = (DWORD)(nTime &gt;&gt; 32);
+}
+</pre><h3 id="a3.6ConversionofFILETIMEAndNSDate">3.6 Conversion of FILETIME And NSDate<a title="Link to this section" href="#a3.6ConversionofFILETIMEAndNSDate" class="anchor"> ¶</a></h3>
+<p>
+MPQKit includes a  category on <a class="ext-link" href="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/Reference/Reference.html"><span class="icon">NSDate</span></a> named <a class="source" href="http://zohar.devklog.net:47805/projects/mpqkit/browser/trunk/NSDateNTFSAdditions.m">NSDateNTFSAdditions</a> to convert to and from NTFS FILETIME, and has been properly tested for correctness.
+</p>
+<h3 id="a3.7Forminga64-BitLargeArchiveOffsetFrom32-BitAnd16-BitComponents">3.7 Forming a 64-Bit Large Archive Offset From 32-Bit And 16-Bit Components<a title="Link to this section" href="#a3.7Forminga64-BitLargeArchiveOffsetFrom32-BitAnd16-BitComponents" class="anchor"> ¶</a></h3>
+<pre class="wiki">unsigned long long MakeLargeArchiveOffset(unsigned long nOffsetLow, unsigned short nOffsetHigh)
+{
+	return ((unsigned long long)nOffsetHigh &lt;&lt; 32) + (unsigned long long)nOffsetLow;
+}
+</pre><h2 id="a4.Constants">4. Constants<a title="Link to this section" href="#a4.Constants" class="anchor"> ¶</a></h2>
+<h3 id="a4.1Locales">4.1 Locales<a title="Link to this section" href="#a4.1Locales" class="anchor"> ¶</a></h3>
+<pre class="wiki">    MPQNeutral      = 0,
+    MPQChinese      = 0x404,
+    MPQCzech        = 0x405,
+    MPQGerman       = 0x407,
+    MPQEnglish      = 0x409,
+    MPQSpanish      = 0x40a,
+    MPQFrench       = 0x40c,
+    MPQItalian      = 0x410,
+    MPQJapanese     = 0x411,
+    MPQKorean       = 0x412,
+    MPQDutch        = 0x413,
+    MPQPolish       = 0x415,
+    MPQPortuguese   = 0x416,
+    MPQRusssian     = 0x419,
+    MPQEnglishUK    = 0x809
+</pre><h2 id="a5.RevisionHistory">5. Revision History<a title="Link to this section" href="#a5.RevisionHistory" class="anchor"> ¶</a></h2>
+<p>
+1.1
+</p>
+<ul><li>Added information and details about weak and strong digital signatures.
+</li></ul><p>
+1.0.1
+</p>
+<ul><li>Corrected encryption key offset adjust algorithm.
+</li></ul><p>
+1.0
+</p>
+<ul><li>Updated to include most of the changes found in the Burning Crusade Friends and Family beta
+</li></ul><p>
+0.91
+</p>
+<ul><li>Updated several structure member descriptions
+</li><li>Listed the full set of characters that can separate list file entries
+</li><li>Noted that (attributes), (listfile), and (signature) use the default language and platform codes
+</li><li>Redid part of the file data specs to clarify the format of sectors
+</li><li>Enhanced descriptions of the different kinds of block table entries
+</li><li>Added <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/ComputeFileKey" rel="nofollow">ComputeFileKey?</a>, <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/FindFileInHashTable" rel="nofollow">FindFileInHashTable?</a>, and <a class="missing wiki" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/DeleteFile" rel="nofollow">DeleteFile?</a> source
+</li></ul>
+        
+        
+      </div>
+          <h3>Attachments</h3>
+          <ul>
+              <li>
+      <a href="http://zohar.devklog.net:47805/projects/mpqkit/attachment/wiki/MoPaQ_Format/The_MoPaQ_File_Format.txt" title="View attachment">The_MoPaQ_File_Format.txt</a>
+      (<span title="27700 bytes">27.1 kB</span>) - added by <em>quantam</em>
+      <a class="timeline" href="http://zohar.devklog.net:47805/projects/mpqkit/timeline?from=2006-09-02T00%3A49%3A49Z-0400&amp;precision=second" title="2006-09-02T00:49:49Z-0400 in Timeline">19 months</a> ago.
+              </li>
+          </ul>
+    </div>
+      <div id="altlinks">
+        <h3>Download in other formats:</h3>
+        <ul>
+          <li class="last first">
+            <a rel="nofollow" href="http://zohar.devklog.net:47805/projects/mpqkit/wiki/MoPaQ_Format?format=txt">Plain Text</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="footer" xml:lang="en"><hr>
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="MoPaQ_Format_files/trac_logo_mini.png" alt="Trac Powered" height="30" width="107"></a>
+      <p class="left">
+        Powered by <a href="http://zohar.devklog.net:47805/projects/mpqkit/about"><strong>Trac 0.11dev-r6677</strong></a><br>
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br><a href="http://trac.edgewall.com/">http://trac.edgewall.com/</a></p>
+    </div>
+  </body></html>

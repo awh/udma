@@ -1,0 +1,23 @@
+<jnlp codebase="http://homepages.nildram.co.uk/~antispin/udma"
+      href="http://homepages.nildram.co.uk/~antispin/udma/udma.jnlp">
+
+    <information>
+        <title>Udma</title>
+        <vendor>antispin.org</vendor>
+        <description>Ultimate Diablo Muling Application</description>
+    </information>
+
+    <resources>
+        <j2se version="1.6+" initial-heap-size="32M" max-heap-size="64M"/>
+        <jar href="udma.jar"/>
+        <jar href="derby.jar"/>
+        <jar href="mysql-connector-java-5.1.6-bin.jar"/>
+    </resources>
+
+    <application-desc main-class="org.antispin.udma.ui.jfc.Main"/>
+
+    <security>
+      <all-permissions/>
+    </security>
+
+</jnlp>
