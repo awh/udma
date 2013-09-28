@@ -25,6 +25,7 @@ import org.antispin.udma.model.factory.IItemFactory;
 import org.antispin.udma.model.impl.DefaultItemFactory;
 import org.antispin.udma.model.repository.HibernateItemRepository;
 import org.antispin.udma.model.repository.IItemRepository;
+import org.antispin.udma.model.repository.ListItemRepository;
 import org.antispin.udma.resource.D2ResourceFactory;
 import org.antispin.udma.service.D2CharacterService;
 import org.antispin.udma.ui.jfc.action.AboutAction;
@@ -43,8 +44,8 @@ public class Main {
 	public static final String INVENTORY_PALETTE = "data\\global\\palette\\ACT1\\pal.dat";
 	
 	private static final IItemFactory itemFactory = new DefaultItemFactory();
-	//private static final IItemRepository itemRepository = new ListItemRepository();
-	private static final IItemRepository itemRepository = new HibernateItemRepository();
+	private static final IItemRepository itemRepository = new ListItemRepository();
+	//private static final IItemRepository itemRepository = new HibernateItemRepository();
 	
 	/**
 	 * @param args
